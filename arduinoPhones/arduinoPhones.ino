@@ -8,11 +8,14 @@ bool buttonStates[] = {0, 0, 0, 0, 0};
 void setup() 
 {
   for(int i = 0; i < phoneCount; i++){
+    pinMode(button1 + i, INPUT);
     buttonStates[i] = digitalRead(button1 + i);
   }
   for(int i = 0; i < phoneCount; i++){
+    pinMode(led1 + i, OUTPUT);
     digitalWrite(led1 + i, LOW);
   }
+  Serial.begin(9600);
 }
 
 
