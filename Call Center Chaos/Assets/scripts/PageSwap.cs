@@ -14,5 +14,4 @@ public class PageSwap : MonoBehaviour
         }
         pages[_index].gameObject.SetActive(true);
     }
-
 }
