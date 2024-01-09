@@ -18,7 +18,7 @@ public class Task : MonoBehaviour
 
 	[Header("Time")]
 	[SerializeField] private float timeDuration;
-	[SerializeField] private float currentTime;
+	private float currentTime;
 
 	[Header("Answer")]
 	[SerializeField] private bool taskAnswer = false;
@@ -63,7 +63,19 @@ public class Task : MonoBehaviour
 			UpdateUI();
 		}
 	}
-	public float TimeDuration => timeDuration;
+	public TaskId ID 
+	{ 
+		get { return taskId; } 
+		set { taskId = value; } 
+	}
+	public int CoinAmount { 
+		get { return coinAmount; } set { coinAmount = value; } 
+	}
+	public float TimeDuration 
+	{ 
+		get { return timeDuration; } set { timeDuration = value; } 
+	}
+
 	public void StartTask()
 	{
 		currentTime = timeDuration;

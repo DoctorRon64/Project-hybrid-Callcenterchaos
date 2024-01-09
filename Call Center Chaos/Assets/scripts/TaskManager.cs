@@ -5,50 +5,53 @@ using UnityEngine.UI;
 public class TaskManager : MonoBehaviour
 {
 	[SerializeField] private List<Task> taskQueue = new List<Task>();
+	[SerializeField] private List<GameObject> gameObjects = new List<GameObject>();
 	[SerializeField] private int maxTaskCount = 4;
 
 	[Header("UI References")]
 	[SerializeField] private GameObject TaskPrefab;
 	[SerializeField] private Text taskQueueText;
 
-	private void Start()
-	{
-		UpdateTaskQueueUI();
-	}
-
 	private void Update()
 	{
-		UpdateTaskQueueUI();
 		ProcessTasks(Time.deltaTime);
 	}
 
-	private void UpdateTaskQueueUI()
+	[ContextMenu("AddTaskExample")]
+	public void AddTaskExample()
 	{
-		string queueText = "Task Queue:\n";
-		foreach (Task task in taskQueue)
-		{
-			queueText += $"{task.TaskName}\n";
-		}
-		taskQueueText.text = queueText;
+		AddTask("ExampleTask", "This is an example task.", 10, TaskId.Grandma, 10);
 	}
 
-	[ContextMenu("yeah")]
-	public void AddTask()
+	public void AddTask(string _taskName, string _taskDescription, float _timeduration, TaskId _taskId, int _coinAmount)
 	{
 		GameObject instance = Instantiate(TaskPrefab, gameObject.transform);
+		gameObjects.Add(instance);
+
 		Task taskInstance = instance.GetComponent<Task>();
 		if (taskInstance == null) { return; }
+		
+		taskInstance.TaskName = _taskName;
+		taskInstance.Description = _taskDescription;
+		taskInstance.ID = _taskId;
+		taskInstance.TimeDuration = _timeduration;
+		taskInstance.CoinAmount = _coinAmount;
 
 		if (taskQueue.Count < maxTaskCount)
 		{
 			taskQueue.Add(taskInstance);
-			UpdateTaskQueueUI();
-
 			taskInstance.StartTask();
 		}
 		else
 		{
-			Debug.LogWarning("Task queue is full. Cannot add more tasks.");
+			Task lastTask = taskQueue[0];
+			taskQueue.RemoveAt(0);
+			gameObjects.Remove(lastTask.gameObject);
+			Destroy(lastTask.gameObject);
+
+			taskQueue.Add(taskInstance);
+
+			taskInstance.StartTask();
 		}
 	}
 
@@ -57,7 +60,8 @@ public class TaskManager : MonoBehaviour
 		if (taskQueue.Contains(task))
 		{
 			taskQueue.Remove(task);
-			UpdateTaskQueueUI();
+			gameObjects.Remove(task.gameObject);
+			Destroy(task.gameObject);
 		}
 	}
 
@@ -72,7 +76,8 @@ public class TaskManager : MonoBehaviour
 			if (task.IsTaskCompleted())
 			{
 				taskQueue.RemoveAt(i);
-				UpdateTaskQueueUI();
+				gameObjects.Remove(task.gameObject);
+				Destroy(task.gameObject);
 			}
 		}
 	}
