@@ -36,5 +36,10 @@ public class LimitedQueue<T>
         get { return queue.Count; }
     }
 
+    public bool Contains(T _item)
+    {
+        return queue.Contains(_item);
+    }
+
     // You can add other methods or properties as needed
 }
