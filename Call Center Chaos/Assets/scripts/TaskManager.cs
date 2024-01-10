@@ -4,81 +4,75 @@ using UnityEngine.UI;
 
 public class TaskManager : MonoBehaviour
 {
-	[SerializeField] private List<Task> taskQueue = new List<Task>();
-	[SerializeField] private List<GameObject> gameObjects = new List<GameObject>();
-	[SerializeField] private int maxTaskCount = 4;
+    [SerializeField] private List<Task> taskQueue = new List<Task>();
+    [SerializeField] private List<GameObject> gameObjects = new List<GameObject>();
+    [SerializeField] private int maxTaskCount = 4;
 
-	[Header("UI References")]
-	[SerializeField] private GameObject TaskPrefab;
-	[SerializeField] private Text taskQueueText;
+    [Header("UI References")]
+    [SerializeField] private GameObject taskPrefab;
 
-	private void Update()
-	{
-		ProcessTasks(Time.deltaTime);
-	}
+    private void Update()
+    {
+        ProcessTasks(Time.deltaTime);
+    }
 
-	[ContextMenu("AddTaskExample")]
-	public void AddTaskExample()
-	{
-		AddTask("ExampleTask", "This is an example task.", 10, TaskId.Grandma, 10);
-	}
+    [ContextMenu("AddTaskExample")]
+    public void AddTaskExample()
+    {
+        AddTask("ExampleTask", "This is an example task.", 10, TaskId.Grandma, 10);
+    }
 
-	public void AddTask(string _taskName, string _taskDescription, float _timeduration, TaskId _taskId, int _coinAmount)
-	{
-		GameObject instance = Instantiate(TaskPrefab, gameObject.transform);
-		gameObjects.Add(instance);
+    public void AddTask(string _taskName, string _taskDescription, float _timeDuration, TaskId _taskId, int _coinAmount)
+    {
+        GameObject instance = Instantiate(taskPrefab, transform);
+        Task taskInstance = instance.GetComponent<Task>();
 
-		Task taskInstance = instance.GetComponent<Task>();
-		if (taskInstance == null) { return; }
-		
-		taskInstance.TaskName = _taskName;
-		taskInstance.Description = _taskDescription;
-		taskInstance.ID = _taskId;
-		taskInstance.TimeDuration = _timeduration;
-		taskInstance.CoinAmount = _coinAmount;
+        if (taskInstance == null)
+        {
+            Debug.LogError("Task component not found on the instantiated object.");
+            Destroy(instance);
+            return;
+        }
 
-		if (taskQueue.Count < maxTaskCount)
-		{
-			taskQueue.Add(taskInstance);
-			taskInstance.StartTask();
-		}
-		else
-		{
-			Task lastTask = taskQueue[0];
-			taskQueue.RemoveAt(0);
-			gameObjects.Remove(lastTask.gameObject);
-			Destroy(lastTask.gameObject);
+        taskInstance.associatedGameObject = instance;
 
-			taskQueue.Add(taskInstance);
+        if (taskQueue.Count >= maxTaskCount)
+        {
+            RemoveOldestTask();
+        }
 
-			taskInstance.StartTask();
-		}
-	}
+        taskQueue.Add(taskInstance);
+        taskInstance.StartTask();
+    }
 
-	public void RemoveTask(Task task)
-	{
-		if (taskQueue.Contains(task))
-		{
-			taskQueue.Remove(task);
-			gameObjects.Remove(task.gameObject);
-			Destroy(task.gameObject);
-		}
-	}
+    private void RemoveOldestTask()
+    {
+        Task oldestTask = taskQueue[0];
+        taskQueue.RemoveAt(0);
+        Destroy(oldestTask.associatedGameObject);
+    }
 
-	public void ProcessTasks(float deltaTime)
-	{
-		for (int i = taskQueue.Count - 1; i >= 0; i--)
-		{
-			Task task = taskQueue[i];
+    public void RemoveTask(Task task)
+    {
+        if (taskQueue.Contains(task))
+        {
+            taskQueue.Remove(task);
+            Destroy(task.associatedGameObject);
+        }
+    }
 
-			task.UpdateTaskTime(deltaTime);
+    private void ProcessTasks(float deltaTime)
+    {
+        for (int i = taskQueue.Count - 1; i >= 0; i--)
+        {
+            Task task = taskQueue[i];
 
-			if (task.IsTaskCompleted())
-			{
-				taskQueue.RemoveAt(i);
-				gameObjects.Remove(task.gameObject);
-				Destroy(task.gameObject);
-			}
-		}
-	}
+            task.UpdateTaskTime(deltaTime);
+
+            if (task.IsTaskCompleted())
+            {
+                RemoveTask(task);
+            }
+        }
+    }
 }

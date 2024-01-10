@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 163, y: -48}
-  m_SizeDelta: {x: 301.3763, y: 63.38}
+  m_AnchoredPosition: {x: 165, y: -70}
+  m_SizeDelta: {x: 290, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8686323864895059432
 CanvasRenderer:
@@ -71,7 +71,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 127
+    m_MaxSize: 60
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -113,7 +113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 222.31683, y: -270}
+  m_AnchoredPosition: {x: 230, y: -300}
   m_SizeDelta: {x: 420, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7269401566785718996
@@ -150,7 +150,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 20
+    m_MaxSize: 25
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 9109713217390787341}
   - component: {fileID: 5272616516367045183}
   - component: {fileID: 2415808527263428704}
-  - component: {fileID: 8189446164357123652}
+  - component: {fileID: 386682123674330979}
   m_Layer: 5
   m_Name: TaskPanel
   m_TagString: Untagged
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8189446164357123652
+--- !u!114 &386682123674330979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -401,12 +401,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d349061dc32dd46b3831c0bf34de7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskName: Title
-  taskDescription: description lore blablabla
-  taskId: 0
+  taskName: ExampleTask
+  taskDescription: ExampleDescription
+  taskId: 2
   coinAmount: 10
-  timeDuration: 10
-  currentTime: 0
+  timeDuration: 25
   taskAnswer: 0
   taskNameText: {fileID: 5561373088604711145}
   taskDescriptionText: {fileID: 7034984872008688589}
@@ -446,8 +445,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 163.00684, y: -106}
-  m_SizeDelta: {x: 301.37, y: 40}
+  m_AnchoredPosition: {x: 170, y: -150}
+  m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5539517942495694015
 CanvasRenderer:
@@ -516,8 +515,8 @@ Transform:
   m_GameObject: {fileID: 7481408852960103367}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 134, y: 320, z: 0}
-  m_LocalScale: {x: 1.3094, y: 1.3094, z: 1.3094}
+  m_LocalPosition: {x: 145, y: 320, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8213055042936352718}

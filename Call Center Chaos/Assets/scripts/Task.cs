@@ -23,16 +23,18 @@ public class Task : MonoBehaviour
 	[Header("Answer")]
 	[SerializeField] private bool taskAnswer = false;
 
-	[SerializeField] private Text taskNameText;
+    [Header("TextReference")]
+    [System.NonSerialized] public GameObject associatedGameObject;
+    [SerializeField] private Text taskNameText;
 	[SerializeField] private Text taskDescriptionText;
 	[SerializeField] private Text timeText;
 	[SerializeField] private Image timeDisplay;
 
-	private void UpdateUI()
+    private void UpdateUI()
 	{
 		taskNameText.text = taskName;
 		taskDescriptionText.text = taskDescription;
-		timeText.text = "Time left: " + currentTime.ToString("F2") + " seconds";
+		timeText.text = "Time left: " + currentTime.ToString("F1") + " seconds";
 		timeDisplay.fillAmount = currentTime / timeDuration;
 	}
 
@@ -82,13 +84,13 @@ public class Task : MonoBehaviour
 		UpdateUI();
 	}
 
-	public void SubmitAnswer(bool answer)
-	{
-		taskAnswer = answer;
-		// Stop or continue based on your logic
-	}
+    public void SubmitAnswer(bool answer)
+    {
+        taskAnswer = answer;
+        // Handle the answer as needed in your game logic
+    }
 
-	public void UpdateTaskTime(float deltaTime)
+    public void UpdateTaskTime(float deltaTime)
 	{
 		currentTime = Mathf.Clamp(currentTime - deltaTime, 0f, timeDuration);
 		UpdateUI();
