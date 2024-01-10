@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MouseUI : MonoBehaviour
 {
-    [SerializeField] public RectTransform UIObject;
+    public RectTransform UIObject;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
