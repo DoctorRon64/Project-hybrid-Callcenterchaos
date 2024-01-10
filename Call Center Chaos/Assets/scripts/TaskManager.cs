@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class TaskManager : MonoBehaviour
 {
     [SerializeField] private List<Task> taskQueue = new List<Task>();
-    [SerializeField] private List<GameObject> gameObjects = new List<GameObject>();
     [SerializeField] private int maxTaskCount = 4;
 
     [Header("UI References")]
