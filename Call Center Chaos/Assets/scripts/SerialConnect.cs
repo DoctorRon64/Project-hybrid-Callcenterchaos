@@ -7,18 +7,37 @@ using System.IO.Ports;
 
 public class SerialConnect : MonoBehaviour
 {
+    public byte DebugCommand;
+    public int LedCount;
     public Dropdown PortSelector;
     private List<string> ports;
     private SerialPort activePort;
+    public static SerialConnect instance;
+    public delegate void ButtonEventDelegate(int index, bool state);
+    public ButtonEventDelegate ButtonEvent;
 
     private void Start()
     {
+        instance = this;
         RefreshPortsDropdown();
+    }
+
+    public void SwitchLed(int index, bool state)
+    {
+        if (activePort == null || index < LedCount) { return; }
+
+        byte stateInt = 0;
+        if (state) { stateInt = 1; }
+
+        int command = index & ~(1 << 7) | (stateInt << (byte)7);
+
+        SendByte((byte)command);
+
     }
 
     public void SendByte(byte data)
     {
-        if(activePort == null) { return; }
+        if (activePort == null) { return; }
 
         byte[] buffer = new byte[1];
         buffer[0] = data;
@@ -50,7 +69,7 @@ public class SerialConnect : MonoBehaviour
     {
         if (activePort != null)
         {
-            if(activePort.IsOpen) {  activePort.Close(); }
+            if (activePort.IsOpen) { activePort.Close(); }
 
             activePort.Dispose();
             activePort = null;
@@ -67,7 +86,18 @@ public class SerialConnect : MonoBehaviour
 
     private void HandleData(byte data)
     {
+        int index = data & ~(1 << 7);
+        int stateInt = data >> 7;
+        bool state = false;
+        if (stateInt == 1) { state = true; }
+        ButtonEvent?.Invoke(index, state);
+        Debug.Log($"Button {index} state change: {state}");
+    }
 
+    [ContextMenu("Test value")]
+    public void DebugTest()
+    {
+        HandleData(DebugCommand);
     }
 
     private void OnDestroy()
