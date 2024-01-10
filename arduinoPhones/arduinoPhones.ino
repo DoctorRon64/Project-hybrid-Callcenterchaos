@@ -25,7 +25,7 @@ void loop()
   for(int i = 0; i < phoneCount; i++){
     bool newState = digitalRead(button1 + i);
     if(newState != buttonStates[i]){
-      send_command(button1 + i, newState);
+      send_command(i + 1, newState);
       buttonStates[i] = newState;
     }
   }

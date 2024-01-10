@@ -1,9 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO.Ports;
 
 public class SerialConnect : MonoBehaviour
 {
