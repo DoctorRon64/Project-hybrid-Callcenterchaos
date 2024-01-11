@@ -61,7 +61,13 @@ public class TaskManager : MonoBehaviour
 
     public void RemoveTask(Task task)
     {
-        if (taskQueue.Contains(task))
+        if (taskQueue.Contains(task) && taskQueue.Count <= 1)
+        {
+            taskQueue.Remove(task);
+            Destroy(task.associatedGameObject);
+            taskQueue.Clear();
+        } 
+        else if (taskQueue.Contains(task))
         {
             taskQueue.Remove(task);
             Destroy(task.associatedGameObject);
@@ -70,14 +76,17 @@ public class TaskManager : MonoBehaviour
 
     public void TaskSelectUI(int _index)
     {
-        foreach(var task in taskQueue)
+        if (_index >= 0 && _index < taskQueue.Count)
         {
-            if (task != taskQueue[_index])
+            foreach (var task in taskQueue)
             {
-                task.DeSelect();
+                if (task != taskQueue[_index])
+                {
+                    task.DeSelect();
+                }
             }
+            taskQueue[_index].Select();
         }
-        taskQueue[_index].Select();
     }
 
     private void ProcessTasks(float deltaTime)

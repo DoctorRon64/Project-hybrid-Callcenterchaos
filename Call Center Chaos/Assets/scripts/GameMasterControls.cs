@@ -11,7 +11,7 @@ public class GameMasterControls : MonoBehaviour
 
     private void Update()
     {
-        if (Input.anyKeyDown && taskManager.taskQueue != null)
+        if (Input.anyKeyDown && taskManager?.taskQueue.Count != 0)
         {
             TaskSelector();
             TaskOptions();
@@ -28,8 +28,8 @@ public class GameMasterControls : MonoBehaviour
     {
         if (Input.GetKeyDown(keyCode))
         {
-            Debug.Log(debugMessage);
             taskManager?.TaskSelectUI(SelectedTaskIndex);
+            Debug.Log(debugMessage);
             ChangeSelectedTask(delta);
         }
     }
@@ -37,9 +37,17 @@ public class GameMasterControls : MonoBehaviour
     private void ChangeSelectedTask(int delta)
     {
         SelectedTaskIndex += delta;
-        SelectedTaskIndex = Mathf.Clamp(SelectedTaskIndex, 0, taskManager.taskQueue.Count - 1);
+        if (SelectedTaskIndex >= taskManager.taskQueue.Count) 
+        {
+            SelectedTaskIndex = 0;
+        } 
+        else if (SelectedTaskIndex < 0) 
+        {
+            SelectedTaskIndex = taskManager.taskQueue.Count - 1;
+        }
         SelectedTask = taskManager?.taskQueue[SelectedTaskIndex];
     }
+
     private void TaskOptions()
     {
         HandleOptionInput(keyCodes[2], AwnserOptions.Option1);
