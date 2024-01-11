@@ -61,14 +61,13 @@ public class TaskManager : MonoBehaviour
 
     public void RemoveTask(Task task)
     {
-        if (taskQueue.Contains(task) && taskQueue.Count <= 1)
+        if (taskQueue.Contains(task))
         {
-            taskQueue.Remove(task);
-            Destroy(task.associatedGameObject);
-            taskQueue.Clear();
-        } 
-        else if (taskQueue.Contains(task))
-        {
+            if (taskQueue.Count == 1)
+            {
+                Debug.Log("remove annough");
+                taskQueue.Clear();
+            }
             taskQueue.Remove(task);
             Destroy(task.associatedGameObject);
         }

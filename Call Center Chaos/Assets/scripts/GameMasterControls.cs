@@ -7,13 +7,17 @@ public class GameMasterControls : MonoBehaviour
     [SerializeField] private TaskManager taskManager;
     [SerializeField] private KeyCode[] keyCodes = new KeyCode[5];
     private Task SelectedTask;
-    private int SelectedTaskIndex = 0;
+    [SerializeField] private int SelectedTaskIndex = 0;
 
     private void Update()
     {
-        if (Input.anyKeyDown && taskManager?.taskQueue.Count != 0)
+        int taskQueindex = taskManager.taskQueue.Count - 1;
+        if (Input.anyKeyDown && taskQueindex != 0)
         {
-            TaskSelector();
+            if (taskQueindex <= 1) 
+            {
+                TaskSelector();
+            }
             TaskOptions();
         }
     }
