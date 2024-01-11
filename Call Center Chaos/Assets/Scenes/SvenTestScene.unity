@@ -551,7 +551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskManager: {fileID: 0}
   Player: {fileID: 652257115}
-  Ringtone: {fileID: 0}
+  Ringtone: {fileID: 8300000, guid: f799e3889bf8ec141ba863086f4424b4, type: 3}
   initialPhoneCalls:
   - {fileID: 11400000, guid: bdfecfc976164a643829a71aa9e0a40c, type: 2}
   currentCall: {fileID: 0}

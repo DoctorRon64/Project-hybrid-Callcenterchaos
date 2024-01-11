@@ -5,6 +5,8 @@ int button1 = 8; //further buttons are offset from here
 int phoneCount = 5; //if you adjust this, adjust the array under as well
 bool buttonStates[] = {0, 0, 0, 0, 0};
 
+byte receivedData;
+
 void setup() 
 {
   for(int i = 0; i < phoneCount; i++){
@@ -32,7 +34,7 @@ void loop()
 
   //check for new commands
   if(Serial.available()){
-    byte receivedData = Serial.read();
+    receivedData = Serial.read();
     receive_command(receivedData);
   }
 }
@@ -41,11 +43,11 @@ void receive_command(byte data){
   bool lightSet = bitRead(data, 7);
   bitWrite(data, 7, 0);
   int led = data;
-  digitalWrite(led, lightSet);
+  digitalWrite(led, !lightSet);
 }
 
 void send_command(int button, bool state){
   byte command = button;
   bitWrite(command, 7, state);
-  Serial.write(command);
+  Serial.println(command, BIN);
 }

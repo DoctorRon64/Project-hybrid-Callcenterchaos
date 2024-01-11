@@ -39,12 +39,12 @@ public class PhoneCall : ScriptableObject
     {
         if (_button != button) { return; }
 
-        if(!PickedUp && state) { PickUpCall(); }
+        if(!PickedUp && !state) { PickUpCall(); }
 
-        if(PickedUp && state)
+        /*if(PickedUp && !state)
         {
             CancelCall();
-        }
+        }*/
     }
 
     public void StartCall()

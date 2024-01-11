@@ -19,6 +19,7 @@ public class PhoneCallManager : MonoBehaviour
 
     private void Start()
     {
+        
         if (initialPhoneCalls.Count > 0)
         {
             foreach (PhoneCall phoneCall in initialPhoneCalls) { phoneCallQueue.Enqueue(phoneCall); }
@@ -27,13 +28,14 @@ public class PhoneCallManager : MonoBehaviour
         taskManager = FindObjectOfType<TaskManager>();
     }
 
+
     private void Update()
     {
         UpdatePhoneCalls?.Invoke(Time.deltaTime);
 
         if (currentCall == null)
         {
-            StartNextCall();
+            StartCoroutine(StartNextCall());
         }
     }
 
@@ -43,18 +45,18 @@ public class PhoneCallManager : MonoBehaviour
 
     }
 
-    private void StartNextCall()
+    private IEnumerator StartNextCall()
     {
         if (phoneCallQueue.Count > 0)
         {
             currentCall = phoneCallQueue.Dequeue();
+            yield return new WaitForSeconds(3);
             currentCall.StartCall();
             Debug.Log($"Starting call; {phoneCallQueue.Count} left in queue");
         }
         else
         {
-            //score screen??
-            return;
+            
         }
     }
 
