@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TaskManager : MonoBehaviour
 {
+    public static TaskManager Instance { get; private set; }
+
     public List<Task> taskQueue = new List<Task>();
     [SerializeField] private int maxTaskCount = 4;
 
@@ -12,15 +13,20 @@ public class TaskManager : MonoBehaviour
 
     private void Awake()
     {
-        taskQueue.Clear();
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("Another instance of TaskManager already exists.");
+            Destroy(gameObject);
+        }
     }
 
     private void Update()
     {
-        if (taskQueue != null)
-        {
-            ProcessTasks(Time.deltaTime);
-        }
+        ProcessTasks(Time.deltaTime);
     }
 
     [ContextMenu("AddTaskExample")]
@@ -42,14 +48,14 @@ public class TaskManager : MonoBehaviour
         }
 
         taskInstance.associatedGameObject = instance;
+        taskInstance.SetupTaskManager(this);
+        taskInstance.StartTask();
+        taskQueue.Add(taskInstance);
 
-        if (taskQueue.Count >= maxTaskCount)
+        if (taskQueue.Count > maxTaskCount)
         {
             RemoveOldestTask();
         }
-
-        taskQueue.Add(taskInstance);
-        taskInstance.StartTask();
     }
 
     private void RemoveOldestTask()
@@ -65,26 +71,29 @@ public class TaskManager : MonoBehaviour
         {
             if (taskQueue.Count == 1)
             {
-                Debug.Log("remove annough");
+                Debug.Log("Removing the only task");
                 taskQueue.Clear();
             }
-            taskQueue.Remove(task);
-            Destroy(task.associatedGameObject);
+            else
+            {
+                taskQueue.Remove(task);
+                Destroy(task.associatedGameObject);
+            }
         }
     }
 
-    public void TaskSelectUI(int _index)
+    public void TaskSelectUI(int index)
     {
-        if (_index >= 0 && _index < taskQueue.Count)
+        if (index >= 0 && index < taskQueue.Count)
         {
             foreach (var task in taskQueue)
             {
-                if (task != taskQueue[_index])
+                if (task != taskQueue[index])
                 {
                     task.DeSelect();
                 }
             }
-            taskQueue[_index].Select();
+            taskQueue[index].Select();
         }
     }
 
@@ -93,7 +102,6 @@ public class TaskManager : MonoBehaviour
         for (int i = taskQueue.Count - 1; i >= 0; i--)
         {
             Task task = taskQueue[i];
-
             task.UpdateTaskTime(deltaTime);
 
             if (task.IsTaskCompleted())

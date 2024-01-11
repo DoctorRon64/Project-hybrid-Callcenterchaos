@@ -1,70 +1,68 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameMasterControls : MonoBehaviour
 {
     [SerializeField] private TaskManager taskManager;
     [SerializeField] private KeyCode[] keyCodes = new KeyCode[5];
-    private Task SelectedTask;
-    [SerializeField] private int SelectedTaskIndex = 0;
+    private int selectedTaskIndex = 0;
 
     private void Update()
     {
-        int taskQueindex = taskManager.taskQueue.Count - 1;
-        if (Input.anyKeyDown && taskQueindex != 0)
+        int taskQueueCount = taskManager.taskQueue.Count;
+
+        if (Input.anyKeyDown && taskQueueCount > 0)
         {
-            if (taskQueindex <= 1) 
+            if (taskQueueCount == 1)
+            {
+                SelectSingleTask();
+            }
+            else
             {
                 TaskSelector();
+                TaskOptions();
             }
-            TaskOptions();
         }
+    }
+
+    private void SelectSingleTask()
+    {
+        taskManager?.TaskSelectUI(0);
     }
 
     private void TaskSelector()
     {
-        HandleKeyInput(keyCodes[0], "Left Task", -1);
-        HandleKeyInput(keyCodes[1], "Right Task", 1);
+        HandleKeyInput(keyCodes[0], -1);
+        HandleKeyInput(keyCodes[1], 1);
     }
 
-    private void HandleKeyInput(KeyCode keyCode, string debugMessage, int delta)
+    private void HandleKeyInput(KeyCode keyCode, int delta)
     {
         if (Input.GetKeyDown(keyCode))
         {
-            taskManager?.TaskSelectUI(SelectedTaskIndex);
-            Debug.Log(debugMessage);
+            taskManager?.TaskSelectUI(selectedTaskIndex);
             ChangeSelectedTask(delta);
         }
     }
 
     private void ChangeSelectedTask(int delta)
     {
-        SelectedTaskIndex += delta;
-        if (SelectedTaskIndex >= taskManager.taskQueue.Count) 
-        {
-            SelectedTaskIndex = 0;
-        } 
-        else if (SelectedTaskIndex < 0) 
-        {
-            SelectedTaskIndex = taskManager.taskQueue.Count - 1;
-        }
-        SelectedTask = taskManager?.taskQueue[SelectedTaskIndex];
+        selectedTaskIndex = (selectedTaskIndex + delta + taskManager.taskQueue.Count) % taskManager.taskQueue.Count;
+        taskManager?.TaskSelectUI(selectedTaskIndex);
     }
 
     private void TaskOptions()
     {
-        HandleOptionInput(keyCodes[2], AwnserOptions.Option1);
-        HandleOptionInput(keyCodes[3], AwnserOptions.Option2);
-        HandleOptionInput(keyCodes[4], AwnserOptions.Option3);
+        HandleOptionInput(keyCodes[2], AnswerOptions.Option1);
+        HandleOptionInput(keyCodes[3], AnswerOptions.Option2);
+        HandleOptionInput(keyCodes[4], AnswerOptions.Option3);
     }
 
-    private void HandleOptionInput(KeyCode keyCode, AwnserOptions option)
+    private void HandleOptionInput(KeyCode keyCode, AnswerOptions option)
     {
         if (Input.GetKeyDown(keyCode))
         {
-            Debug.Log("Option " + option);
-            taskManager?.taskQueue[SelectedTaskIndex].SubmitAnswer(option);
+            taskManager?.taskQueue[selectedTaskIndex].SubmitAnswer(option);
         }
     }
 }
