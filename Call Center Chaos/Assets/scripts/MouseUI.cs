@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class MouseUI : MonoBehaviour
 {
-    public RectTransform UIObject;
+    [SerializeField] public RectTransform UIObject;
+
+    AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -17,6 +19,11 @@ public class MouseUI : MonoBehaviour
     {
         Cursor.visible = false;
         MoveObjectToMouse();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            audio.Play();
+        }
     }
 
     void MoveObjectToMouse()
