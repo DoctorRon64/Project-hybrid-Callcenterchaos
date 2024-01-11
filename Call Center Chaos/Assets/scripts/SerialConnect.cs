@@ -38,7 +38,7 @@ public class SerialConnect : MonoBehaviour
 
     public void SwitchLed(int index, bool state)
     {
-        if (activePort == null || index < LedCount) { return; }
+        if (activePort == null || index > LedCount) { return; }
 
         byte stateInt = 0;
         if (state) { stateInt = 1; }
