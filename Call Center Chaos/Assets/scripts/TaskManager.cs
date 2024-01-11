@@ -4,16 +4,20 @@ using UnityEngine.UI;
 
 public class TaskManager : MonoBehaviour
 {
-    [SerializeField] private List<Task> taskQueue = new List<Task>();
-    [SerializeField] private List<GameObject> gameObjects = new List<GameObject>();
+    public List<Task> taskQueue = new List<Task>();
     [SerializeField] private int maxTaskCount = 4;
+
+   
 
     [Header("UI References")]
     [SerializeField] private GameObject taskPrefab;
 
     private void Update()
     {
-        ProcessTasks(Time.deltaTime);
+        if (taskQueue != null)
+        {
+            ProcessTasks(Time.deltaTime);
+        }
     }
 
     [ContextMenu("AddTaskExample")]
@@ -59,6 +63,18 @@ public class TaskManager : MonoBehaviour
             taskQueue.Remove(task);
             Destroy(task.associatedGameObject);
         }
+    }
+
+    public void TaskSelectUI(int _index)
+    {
+        foreach(var task in taskQueue)
+        {
+            if (task != taskQueue[_index])
+            {
+                task.DeSelect();
+            }
+        }
+        taskQueue[_index].Select();
     }
 
     private void ProcessTasks(float deltaTime)
