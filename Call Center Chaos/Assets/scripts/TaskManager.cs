@@ -7,10 +7,13 @@ public class TaskManager : MonoBehaviour
     public List<Task> taskQueue = new List<Task>();
     [SerializeField] private int maxTaskCount = 4;
 
-   
-
     [Header("UI References")]
     [SerializeField] private GameObject taskPrefab;
+
+    private void Awake()
+    {
+        taskQueue.Clear();
+    }
 
     private void Update()
     {
