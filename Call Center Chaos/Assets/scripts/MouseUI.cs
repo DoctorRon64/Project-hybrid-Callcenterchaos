@@ -6,12 +6,13 @@ public class MouseUI : MonoBehaviour
 {
     [SerializeField] public RectTransform UIObject;
 
+    Vector3 targetPosition;
     AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audio = GetComponent<AudioSource>();;
     }
 
     // Update is called once per frame
@@ -28,6 +29,9 @@ public class MouseUI : MonoBehaviour
 
     void MoveObjectToMouse()
     {
-        UIObject.position = Input.mousePosition;
+        //UIObject.position = Input.mousePosition;
+        targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        targetPosition.z = 0;
+        transform.position = targetPosition;
     }
 }
