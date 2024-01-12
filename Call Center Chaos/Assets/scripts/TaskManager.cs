@@ -3,54 +3,62 @@ using UnityEngine;
 
 public class TaskManager : MonoBehaviour
 {
-    public static TaskManager Instance { get; private set; }
+	public static TaskManager Instance { get; private set; }
 
-    public List<Task> taskQueue = new List<Task>();
-    [SerializeField] private int maxTaskCount = 4;
+	public List<Task> taskQueue = new List<Task>();
+	[SerializeField] private int maxTaskCount = 4;
 
-    [Header("UI References")]
-    [SerializeField] private GameObject taskPrefab;
+	[Header("UI References")]
+	[SerializeField] private GameObject taskPrefab;
 
-    private void Update()
-    {
-        ProcessTasks(Time.deltaTime);
-    }
+	private void Awake()
+	{
+		taskQueue.Clear();
+	}
 
-    [ContextMenu("AddTaskExample")]
-    public void AddTaskExample()
-    {
-        AddTask(taskPrefab);
-    }
+	private void Update()
+	{
+		if (taskQueue != null)
+		{
+			ProcessTasks(Time.deltaTime);	
+		}
+	}
 
-    public void AddTask(GameObject taskObj)
-    {
-        GameObject instance = Instantiate(taskObj, transform);
-        Task taskInstance = instance.GetComponent<Task>();
+	[ContextMenu("AddTaskExample")]
+	public void AddTaskExample()
+	{
+		AddTask(taskPrefab);
+	}
 
-        if (taskInstance == null)
-        {
-            Debug.LogError("Task component not found on the instantiated object.");
-            Destroy(instance);
-            return;
-        }
+	public void AddTask(GameObject taskObj)
+	{
+		GameObject instance = Instantiate(taskObj, transform);
+		Task taskInstance = instance.GetComponent<Task>();
 
-        taskInstance.associatedGameObject = instance;
-        taskInstance.SetupTaskManager(this);
-        taskInstance.StartTask();
-        taskQueue.Add(taskInstance);
+		if (taskInstance == null)
+		{
+			Debug.LogError("Task component not found on the instantiated object.");
+			Destroy(instance);
+			return;
+		}
 
-        if (taskQueue.Count > maxTaskCount)
-        {
-            RemoveOldestTask();
-        }
-    }
+		taskInstance.associatedGameObject = instance;
+		taskInstance.SetupTaskManager(this);
+		taskInstance.StartTask();
+		taskQueue.Add(taskInstance);
 
-    private void RemoveOldestTask()
-    {
-        Task oldestTask = taskQueue[0];
-        taskQueue.RemoveAt(0);
-        Destroy(oldestTask.associatedGameObject);
-    }
+		if (taskQueue.Count > maxTaskCount)
+		{
+			RemoveOldestTask();
+		}
+	}
+
+	private void RemoveOldestTask()
+	{
+		Task oldestTask = taskQueue[0];
+		taskQueue.RemoveAt(0);
+		Destroy(oldestTask.associatedGameObject);
+	}
 
 	public void RemoveTask(Task task)
 	{
@@ -70,31 +78,31 @@ public class TaskManager : MonoBehaviour
 
 
 	public void TaskSelectUI(int index)
-    {
-        if (index >= 0 && index < taskQueue.Count)
-        {
-            foreach (var task in taskQueue)
-            {
-                if (task != taskQueue[index])
-                {
-                    task.DeSelect();
-                }
-            }
-            taskQueue[index].Select();
-        }
-    }
+	{
+		if (index >= 0 && index < taskQueue.Count)
+		{
+			foreach (var task in taskQueue)
+			{
+				if (task != taskQueue[index])
+				{
+					task.DeSelect();
+				}
+			}
+			taskQueue[index].Select();
+		}
+	}
 
-    private void ProcessTasks(float deltaTime)
-    {
-        for (int i = taskQueue.Count - 1; i >= 0; i--)
-        {
-            Task task = taskQueue[i];
-            task.UpdateTaskTime(deltaTime);
+	private void ProcessTasks(float deltaTime)
+	{
+		for (int i = taskQueue.Count - 1; i >= 0; i--)
+		{
+			Task task = taskQueue[i];
+			task.UpdateTaskTime(deltaTime);
 
-            if (task.IsTaskCompleted())
-            {
-                RemoveTask(task);
-            }
-        }
-    }
+			if (task.IsTaskCompleted())
+			{
+				RemoveTask(task);
+			}
+		}
+	}
 }

@@ -25,12 +25,14 @@ public class SerialConnect : MonoBehaviour
     {
         if (activePort == null || index < LedCount) { return; }
 
-        byte stateInt = 0;
-        if (state) { stateInt = 1; }
+        byte command = 0;
+        command += (byte)index;
+        if (state)
+        {
+            command += 128;
+        }
 
-        int command = index & ~(1 << 7) | (stateInt << (byte)7);
-
-        SendByte((byte)command);
+        SendByte(command);
 
     }
 
@@ -40,7 +42,8 @@ public class SerialConnect : MonoBehaviour
 
         byte[] buffer = new byte[1];
         buffer[0] = data;
-        activePort.Write(buffer, 0, 1);
+        activePort.Write(buffer, 0, buffer.Length);
+        Debug.Log($"Byte sent to Arduino: {buffer[0]}");
     }
 
     public void RefreshPortsDropdown()
