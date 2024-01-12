@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TaskManager : MonoBehaviour
 {
-    [SerializeField] private List<Task> taskQueue = new List<Task>();
-    [SerializeField] private List<GameObject> gameObjects = new List<GameObject>();
+    public static TaskManager Instance { get; private set; }
+
+    public List<Task> taskQueue = new List<Task>();
     [SerializeField] private int maxTaskCount = 4;
 
     [Header("UI References")]
@@ -19,12 +19,12 @@ public class TaskManager : MonoBehaviour
     [ContextMenu("AddTaskExample")]
     public void AddTaskExample()
     {
-        AddTask("ExampleTask", "This is an example task.", 10, TaskId.Grandma, 10);
+        AddTask(taskPrefab);
     }
 
-    public void AddTask(string _taskName, string _taskDescription, float _timeDuration, TaskId _taskId, int _coinAmount)
+    public void AddTask(GameObject taskObj)
     {
-        GameObject instance = Instantiate(taskPrefab, transform);
+        GameObject instance = Instantiate(taskObj, transform);
         Task taskInstance = instance.GetComponent<Task>();
 
         if (taskInstance == null)
@@ -35,14 +35,14 @@ public class TaskManager : MonoBehaviour
         }
 
         taskInstance.associatedGameObject = instance;
+        taskInstance.SetupTaskManager(this);
+        taskInstance.StartTask();
+        taskQueue.Add(taskInstance);
 
-        if (taskQueue.Count >= maxTaskCount)
+        if (taskQueue.Count > maxTaskCount)
         {
             RemoveOldestTask();
         }
-
-        taskQueue.Add(taskInstance);
-        taskInstance.StartTask();
     }
 
     private void RemoveOldestTask()
@@ -52,12 +52,35 @@ public class TaskManager : MonoBehaviour
         Destroy(oldestTask.associatedGameObject);
     }
 
-    public void RemoveTask(Task task)
+	public void RemoveTask(Task task)
+	{
+		if (taskQueue.Contains(task))
+		{
+			if (taskQueue.Count == 1)
+			{
+				taskQueue.Clear();
+			}
+			else
+			{
+				taskQueue.Remove(task);
+			}
+			DestroyImmediate(task.associatedGameObject);
+		}
+	}
+
+
+	public void TaskSelectUI(int index)
     {
-        if (taskQueue.Contains(task))
+        if (index >= 0 && index < taskQueue.Count)
         {
-            taskQueue.Remove(task);
-            Destroy(task.associatedGameObject);
+            foreach (var task in taskQueue)
+            {
+                if (task != taskQueue[index])
+                {
+                    task.DeSelect();
+                }
+            }
+            taskQueue[index].Select();
         }
     }
 
@@ -66,7 +89,6 @@ public class TaskManager : MonoBehaviour
         for (int i = taskQueue.Count - 1; i >= 0; i--)
         {
             Task task = taskQueue[i];
-
             task.UpdateTaskTime(deltaTime);
 
             if (task.IsTaskCompleted())
