@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 public enum TaskId
@@ -10,12 +7,6 @@ public enum TaskId
 	Italy,
 	Homework
 }
-public enum AwnserOptions
-{
-    Option1,
-    Option2,
-    Option3,
-}
 
 public class Task : MonoBehaviour
 {
@@ -23,27 +14,21 @@ public class Task : MonoBehaviour
 	[SerializeField] private string taskName;
 	[SerializeField] private string taskDescription;
 	[SerializeField] private TaskId taskId;
-    [SerializeField] private Task parentTask;
-
-	[SerializeField] private Color deselectColor;
-	[SerializeField] private Color SelectColor;
-
-    [Header("Options")]
-    [SerializeField] private string[] Options = new string[3];
-    public AwnserOptions awnserOption { get; private set; }
-	[SerializeField] private float timeDuration;
-	private float currentTime;
 	[SerializeField] private int coinAmount;
 
-    [Header("References")]
+	[Header("Time")]
+	[SerializeField] private float timeDuration;
+	private float currentTime;
+
+	[Header("Answer")]
+	[SerializeField] private bool taskAnswer = false;
+
+    [Header("TextReference")]
     [System.NonSerialized] public GameObject associatedGameObject;
     [SerializeField] private Text taskNameText;
 	[SerializeField] private Text taskDescriptionText;
 	[SerializeField] private Text timeText;
 	[SerializeField] private Image timeDisplay;
-	[SerializeField] private Text OptionText1;
-	[SerializeField] private Text OptionText2;
-	[SerializeField] private Text OptionText3;
 
     private void UpdateUI()
 	{
@@ -51,21 +36,58 @@ public class Task : MonoBehaviour
 		taskDescriptionText.text = taskDescription;
 		timeText.text = "Time left: " + currentTime.ToString("F1") + " seconds";
 		timeDisplay.fillAmount = currentTime / timeDuration;
-
-		OptionText1.text = Options[0];
-		OptionText2.text = Options[1];
-		OptionText3.text = Options[2];
 	}
+
+	public string TaskName
+	{
+		get => taskName;
+		set
+		{
+			taskName = value;
+			UpdateUI();
+		}
+	}
+	public string Description
+	{
+		get => taskDescription;
+		set
+		{
+			taskDescription = value;
+			UpdateUI();
+		}
+	}
+	public float CurrentTime
+	{
+		get => currentTime;
+		set
+		{
+			currentTime = Mathf.Clamp(value, 0f, timeDuration);
+			UpdateUI();
+		}
+	}
+	public TaskId ID 
+	{ 
+		get { return taskId; } 
+		set { taskId = value; } 
+	}
+	public int CoinAmount { 
+		get { return coinAmount; } set { coinAmount = value; } 
+	}
+	public float TimeDuration 
+	{ 
+		get { return timeDuration; } set { timeDuration = value; } 
+	}
+
 	public void StartTask()
 	{
 		currentTime = timeDuration;
 		UpdateUI();
 	}
 
-    public void SubmitAnswer(AwnserOptions _answer)
+    public void SubmitAnswer(bool answer)
     {
-        awnserOption = _answer;
-		currentTime = 0f;
+        taskAnswer = answer;
+        // Handle the answer as needed in your game logic
     }
 
     public void UpdateTaskTime(float deltaTime)
@@ -78,14 +100,4 @@ public class Task : MonoBehaviour
 	{
 		return currentTime <= 0f;
 	}
-
-    public void DeSelect()
-    {
-		GetComponent<Image>().color = deselectColor;
-    }
-
-	public void Select()
-	{
-		GetComponent<Image>().color = SelectColor;
-    }
 }
