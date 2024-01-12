@@ -4,27 +4,34 @@ using UnityEngine.UI;
 
 public class TaskManager : MonoBehaviour
 {
-    [SerializeField] private List<Task> taskQueue = new List<Task>();
-    [SerializeField] private List<GameObject> gameObjects = new List<GameObject>();
+    public List<Task> taskQueue = new List<Task>();
     [SerializeField] private int maxTaskCount = 4;
 
     [Header("UI References")]
     [SerializeField] private GameObject taskPrefab;
 
+    private void Awake()
+    {
+        taskQueue.Clear();
+    }
+
     private void Update()
     {
-        ProcessTasks(Time.deltaTime);
+        if (taskQueue != null)
+        {
+            ProcessTasks(Time.deltaTime);
+        }
     }
 
     [ContextMenu("AddTaskExample")]
     public void AddTaskExample()
     {
-        AddTask("ExampleTask", "This is an example task.", 10, TaskId.Grandma, 10);
+        AddTask(taskPrefab);
     }
 
-    public void AddTask(string _taskName, string _taskDescription, float _timeDuration, TaskId _taskId, int _coinAmount)
+    public void AddTask(GameObject taskObj)
     {
-        GameObject instance = Instantiate(taskPrefab, transform);
+        GameObject instance = Instantiate(taskObj, transform);
         Task taskInstance = instance.GetComponent<Task>();
 
         if (taskInstance == null)
@@ -56,8 +63,28 @@ public class TaskManager : MonoBehaviour
     {
         if (taskQueue.Contains(task))
         {
+            if (taskQueue.Count == 1)
+            {
+                Debug.Log("remove annough");
+                taskQueue.Clear();
+            }
             taskQueue.Remove(task);
             Destroy(task.associatedGameObject);
+        }
+    }
+
+    public void TaskSelectUI(int _index)
+    {
+        if (_index >= 0 && _index < taskQueue.Count)
+        {
+            foreach (var task in taskQueue)
+            {
+                if (task != taskQueue[_index])
+                {
+                    task.DeSelect();
+                }
+            }
+            taskQueue[_index].Select();
         }
     }
 
