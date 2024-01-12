@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class SerialConnect : MonoBehaviour
 {
-    [SerializeField] private string debugPortName;
-    [SerializeField] private bool useDebugPort;
+    public byte DebugCommand;
     public int LedCount;
     public Dropdown PortSelector;
     private List<string> ports;
@@ -20,25 +19,11 @@ public class SerialConnect : MonoBehaviour
     {
         instance = this;
         RefreshPortsDropdown();
-
-        if (useDebugPort)
-        {
-            ConnectToPort();
-        }
-
-    }
-
-    private void Update()
-    {
-        if(activePort != null && activePort.BytesToRead > 0)
-        {
-            HandleData((byte)activePort.ReadByte());
-        }
     }
 
     public void SwitchLed(int index, bool state)
     {
-        if (activePort == null || index > LedCount) { return; }
+        if (activePort == null || index < LedCount) { return; }
 
         byte stateInt = 0;
         if (state) { stateInt = 1; }
@@ -60,7 +45,6 @@ public class SerialConnect : MonoBehaviour
 
     public void RefreshPortsDropdown()
     {
-        if(PortSelector == null) { return; }
         PortSelector.ClearOptions();
 
         string[] portNames = SerialPort.GetPortNames();
@@ -71,15 +55,11 @@ public class SerialConnect : MonoBehaviour
 
     public void ConnectToPort()
     {
-        string portName;
-        if (useDebugPort) { portName = debugPortName; }
-        else { portName = ports[PortSelector.value]; }
-
+        string portName = ports[PortSelector.value];
         activePort = new SerialPort(portName, 9600);
 
         activePort.Open();
-        activePort.DataReceived += new SerialDataReceivedEventHandler(ReceiveData);
-        
+        activePort.DataReceived += ReceiveData;
         Debug.Log($"Connected to {portName}");
 
     }
@@ -91,15 +71,16 @@ public class SerialConnect : MonoBehaviour
             if (activePort.IsOpen) { activePort.Close(); }
 
             activePort.Dispose();
+            activePort = null;
             Debug.Log("Disconnected");
         }
     }
 
     private void ReceiveData(object sender, SerialDataReceivedEventArgs e)
     {
-        Debug.Log("Received Arduino data");
         byte[] data = new byte[1];
         activePort.Read(data, 0, 1);
+        HandleData(data[0]);
     }
 
     private void HandleData(byte data)
@@ -110,6 +91,12 @@ public class SerialConnect : MonoBehaviour
         if (stateInt == 1) { state = true; }
         ButtonEvent?.Invoke(index, state);
         Debug.Log($"Button {index} state change: {state}");
+    }
+
+    [ContextMenu("Test value")]
+    public void DebugTest()
+    {
+        HandleData(DebugCommand);
     }
 
     private void OnDestroy()
