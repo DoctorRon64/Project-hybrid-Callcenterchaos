@@ -620,7 +620,7 @@ MonoBehaviour:
   taskDescription: ExampleDescription
   taskId: 2
   parentTask: {fileID: 0}
-  deselectColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+  deselectColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
   selectColor: {r: 1, g: 1, b: 1, a: 1}
   Options:
   - 'Option 1: JA ik wil graag extra kaas op mijn pizza'

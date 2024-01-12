@@ -11,19 +11,6 @@ public class TaskManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private GameObject taskPrefab;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Debug.LogWarning("Another instance of TaskManager already exists.");
-            Destroy(gameObject);
-        }
-    }
-
     private void Update()
     {
         ProcessTasks(Time.deltaTime);
@@ -65,24 +52,24 @@ public class TaskManager : MonoBehaviour
         Destroy(oldestTask.associatedGameObject);
     }
 
-    public void RemoveTask(Task task)
-    {
-        if (taskQueue.Contains(task))
-        {
-            if (taskQueue.Count == 1)
-            {
-                Debug.Log("Removing the only task");
-                taskQueue.Clear();
-            }
-            else
-            {
-                taskQueue.Remove(task);
-                Destroy(task.associatedGameObject);
-            }
-        }
-    }
+	public void RemoveTask(Task task)
+	{
+		if (taskQueue.Contains(task))
+		{
+			if (taskQueue.Count == 1)
+			{
+				taskQueue.Clear();
+			}
+			else
+			{
+				taskQueue.Remove(task);
+			}
+			DestroyImmediate(task.associatedGameObject);
+		}
+	}
 
-    public void TaskSelectUI(int index)
+
+	public void TaskSelectUI(int index)
     {
         if (index >= 0 && index < taskQueue.Count)
         {
