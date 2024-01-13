@@ -563,22 +563,22 @@ MonoBehaviour:
   taskName: ExampleTask
   taskDescription: ExampleDescription
   taskId: 2
-  parentTask: {fileID: 0}
   deselectColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
   selectColor: {r: 1, g: 1, b: 1, a: 1}
   Options:
-  - 
-  - 
-  - 
+  - What the Heelll
+  - No fackin way
+  optionsText:
+  - {fileID: 7383737201725660917}
+  - {fileID: 7693605284446267084}
+  - {fileID: 6996456821230712502}
+  SelectedOption: 0
   timeDuration: 25
   coinAmount: 10
   taskNameText: {fileID: 5561373088604711145}
   taskDescriptionText: {fileID: 7034984872008688589}
   timeText: {fileID: 4875226331243920177}
   timeDisplay: {fileID: 5802664312149317439}
-  OptionText1: {fileID: 7383737201725660917}
-  OptionText2: {fileID: 7693605284446267084}
-  OptionText3: {fileID: 6996456821230712502}
 --- !u!1 &5299495493079733758
 GameObject:
   m_ObjectHideFlags: 0
