@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SerialConnect : MonoBehaviour
@@ -14,33 +15,44 @@ public class SerialConnect : MonoBehaviour
     public static SerialConnect instance;
     public delegate void ButtonEventDelegate(int index, bool state);
     public ButtonEventDelegate ButtonEvent;
+    private UnityEvent dropdownEvent;
 
     private void Start()
     {
         instance = this;
         RefreshPortsDropdown();
+        PortSelector.onValueChanged.AddListener(delegate { ConnectToPort(); });
+        ConnectToPort();
     }
 
-    public void SwitchLed(int index, bool state)
+    private void Update()
     {
-        if (activePort == null || index < LedCount) { return; }
+        if (activePort == null) { return; }
 
-        byte command = 0;
-        command += (byte)index;
-        if (state)
+        if (activePort.BytesToRead > 0) 
         {
-            command += 128;
+            byte[] data = new byte[1];
+            activePort.Read(data, 0, 1);
+            HandleData(data[0]);
         }
+    }
+
+    public void SwitchLed(bool state)
+    {
+        if (activePort == null) { return; }
+
+        char command = '0';
+        if (state) { command = '1'; }
 
         SendByte(command);
 
     }
 
-    public void SendByte(byte data)
+    public void SendByte(char data)
     {
         if (activePort == null) { return; }
 
-        byte[] buffer = new byte[1];
+        char[] buffer = new char[1];
         buffer[0] = data;
         activePort.Write(buffer, 0, buffer.Length);
         Debug.Log($"Byte sent to Arduino: {buffer[0]}");
@@ -61,9 +73,16 @@ public class SerialConnect : MonoBehaviour
         string portName = ports[PortSelector.value];
         activePort = new SerialPort(portName, 9600);
 
-        activePort.Open();
-        activePort.DataReceived += ReceiveData;
-        Debug.Log($"Connected to {portName}");
+        try
+        {
+            activePort.Open();
+            activePort.DataReceived += ReceiveData;
+            Debug.Log($"Connected to {portName}");
+        }
+        catch
+        {
+            Debug.Log($"Couldn't connect to {portName}");
+        }
 
     }
 
@@ -71,7 +90,7 @@ public class SerialConnect : MonoBehaviour
     {
         if (activePort != null)
         {
-            if (activePort.IsOpen) { activePort.Close(); }
+            if (activePort.IsOpen) { SwitchLed(false); activePort.Close(); }
 
             activePort.Dispose();
             activePort = null;

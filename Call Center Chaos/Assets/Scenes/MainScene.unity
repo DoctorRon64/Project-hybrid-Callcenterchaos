@@ -123,53 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &92605872
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 92605874}
-  - component: {fileID: 92605873}
-  m_Layer: 0
-  m_Name: TaskManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &92605873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92605872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d592ffd170005f42a952a5300e03599, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskQueue: []
-  maxTaskCount: 4
-  taskPrefab: {fileID: 0}
---- !u!4 &92605874
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92605872}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 397.9179, y: 284.16837, z: 6.692652}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &147895459
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,8 +2000,8 @@ MonoBehaviour:
   Player: {fileID: 707042193}
   Ringtone: {fileID: 8300000, guid: f799e3889bf8ec141ba863086f4424b4, type: 3}
   initialPhoneCalls:
-  - {fileID: 11400000, guid: 85980642cc46fb94ba3d942ebcaadeec, type: 2}
-  currentCall: {fileID: 11400000, guid: 85980642cc46fb94ba3d942ebcaadeec, type: 2}
+  - {fileID: 11400000, guid: 80ef0bbf5dc3d754ba3ce902ec3ec600, type: 2}
+  currentCall: {fileID: 0}
 --- !u!4 &707042196
 Transform:
   m_ObjectHideFlags: 0
@@ -6282,7 +6235,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 2147366043}
   - {fileID: 164057566}
-  - {fileID: 92605874}
   - {fileID: 2033537075}
   - {fileID: 1143512651}
   - {fileID: 1208467093}

@@ -5,17 +5,15 @@ using UnityEngine;
 [CreateAssetMenu]
 public class PhoneCall : ScriptableObject
 {
-    public int button;
     public AudioClip Audio;
     public GameObject task;
     public float ringTime;
     private float timer;
-    public bool PickedUp;
+    [HideInInspector]public bool PickedUp;
     [HideInInspector]public PhoneCallManager manager;
 
-    public PhoneCall(int _button, AudioClip _audio, GameObject _task, float _ringTime, PhoneCallManager _manager)
+    public PhoneCall(AudioClip _audio, GameObject _task, float _ringTime, PhoneCallManager _manager)
     {
-        button = _button;
         Audio = _audio;
         task = _task;
         ringTime = _ringTime;
@@ -37,21 +35,19 @@ public class PhoneCall : ScriptableObject
 
     private void ButtonEvent(int _button, bool state)
     {
-        if (_button != button) { return; }
-
         if(!PickedUp && !state) { PickUpCall(); }
 
-        /*if(PickedUp && !state)
+        if(PickedUp && state && timer < Audio.length - 0.5f)
         {
             CancelCall();
-        }*/
+        }
     }
 
     public void StartCall()
     {
         manager = PhoneCallManager.instance;
         manager.StartRinging();
-        SerialConnect.instance.SwitchLed(button, true);
+        SerialConnect.instance.SwitchLed(true);
         manager.UpdatePhoneCalls += PhoneUpdate;
         SerialConnect.instance.ButtonEvent += ButtonEvent;
         timer = ringTime;
@@ -60,7 +56,7 @@ public class PhoneCall : ScriptableObject
 
     public void PickUpCall()
     {
-        Debug.Log($"Phone {button} picked up");
+        Debug.Log($"Phone picked up");
         manager.StopRinging();
         PickedUp = true;
         timer = Audio.length + 1;
@@ -72,7 +68,7 @@ public class PhoneCall : ScriptableObject
     {
         Debug.Log("Current call cancelled");
         manager.Player.Stop();
-        SerialConnect.instance.SwitchLed(button, false);
+        SerialConnect.instance.SwitchLed(false);
         manager.currentCall = null;
         EndProcess();
 
@@ -85,10 +81,11 @@ public class PhoneCall : ScriptableObject
         Debug.Log("Current call ended");
         if(task != null)
         {
+            Debug.Log("Adding new task from call");
             manager.taskManager.AddTask(task);
         }
         manager.Player.Stop();
-        SerialConnect.instance.SwitchLed(button, false);
+        SerialConnect.instance.SwitchLed(false);
         EndProcess();
     }
 
