@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class TaskManager : MonoBehaviour
 {
-	public static TaskManager Instance { get; private set; }
-
 	public List<Task> taskQueue = new List<Task>();
 	[SerializeField] private int maxTaskCount = 4;
 

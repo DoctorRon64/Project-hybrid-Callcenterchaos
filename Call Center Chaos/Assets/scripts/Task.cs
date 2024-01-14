@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,41 +12,33 @@ public enum TaskId
     Homework
 }
 
-public enum AnswerOptions
-{
-    Option1,
-    Option2,
-    Option3
-}
-
 public class Task : MonoBehaviour
 {
     [Header("Values")]
     [SerializeField] private string taskName;
     [SerializeField] private string taskDescription;
     [SerializeField] private TaskId taskId;
-    [SerializeField] private Task parentTask;
 
     [SerializeField] private Color deselectColor;
     [SerializeField] private Color selectColor;
 
     [Header("Options")]
-    [SerializeField] private string[] Options = new string[3];
-    public AnswerOptions AnswerOption { get; private set; }
+    [SerializeField] private List<string> Options = new List<string>();
+    [SerializeField] private List<PhoneCall> Calls = new List<PhoneCall>();
+	[SerializeField] private Text[] optionsText;
+    private int OptionCount => Options.Count;
+    public int SelectedOption = 0;
     [SerializeField] private float timeDuration;
-    private float currentTime;
     [SerializeField] private int coinAmount;
+    private float currentTime;
 
     [Header("References")]
-    private TaskManager manager;
-    [System.NonSerialized] public GameObject associatedGameObject;
     [SerializeField] private Text taskNameText;
     [SerializeField] private Text taskDescriptionText;
     [SerializeField] private Text timeText;
     [SerializeField] private Image timeDisplay;
-    [SerializeField] private Text OptionText1;
-    [SerializeField] private Text OptionText2;
-    [SerializeField] private Text OptionText3;
+    private TaskManager manager;
+    [System.NonSerialized] public GameObject associatedGameObject;
 
     public void SetupTaskManager(TaskManager _manager)
     {
@@ -58,9 +52,10 @@ public class Task : MonoBehaviour
         timeText.text = "Time left: " + currentTime.ToString("F1") + " seconds";
         timeDisplay.fillAmount = currentTime / timeDuration;
 
-        OptionText1.text = Options[0];
-        OptionText2.text = Options[1];
-        OptionText3.text = Options[2];
+        for (int i = 0; i < Options.Count; i++)
+        {
+            optionsText[i].text = Options[i];
+        }
     }
 
     public void StartTask()
@@ -69,28 +64,49 @@ public class Task : MonoBehaviour
         UpdateUI();
     }
 
-    public void SubmitAnswer(AnswerOptions answer)
+    public bool SubmitAnswer(int answer)
     {
-        if (Enum.IsDefined(typeof(AnswerOptions), answer))
+        if (answer < OptionCount) 
         {
-            AnswerOption = answer;
+            SelectedOption = answer;
             HandleTaskSubmission();
+            return true;
         }
         else
         {
             Debug.LogWarning("Invalid answer option: " + answer);
+            return false;
         }
     }
 
-    private void HandleTaskSubmission()
-    {
-        RemoveTask();
-    }
+	private void HandleTaskSubmission()
+	{
+		int selectedAnswer = SelectedOption;
 
-    private void RemoveTask()
-    {
-        manager.RemoveTask(this);
-    }
+		if (selectedAnswer >= 0 && selectedAnswer < Options.Count)
+		{
+			SubmitAnswerToPhoneCall(selectedAnswer);
+		}
+		else
+		{
+			Debug.LogWarning("Invalid answer option: " + selectedAnswer);
+		}
+
+		manager.RemoveTask(this);
+	}
+
+	private void SubmitAnswerToPhoneCall(int answer)
+	{
+		if (answer < Calls.Count)
+		{
+			PhoneCall selectedCall = Calls[answer];
+			selectedCall.StartCall();
+		}
+		else
+		{
+			Debug.LogWarning("Invalid answer option: " + answer);
+		}
+	}
 
     public void UpdateTaskTime(float deltaTime)
     {

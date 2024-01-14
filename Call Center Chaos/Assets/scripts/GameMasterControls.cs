@@ -18,12 +18,12 @@ public class GameMasterControls : MonoBehaviour
 		}
 
 		// Select AnswerOption with 1, 2, or 3 keys
-		HandleKeyInput(keyCodes[2], AnswerOptions.Option1);
-		HandleKeyInput(keyCodes[3], AnswerOptions.Option2);
-		HandleKeyInput(keyCodes[4], AnswerOptions.Option3);
+		HandleKeyInput(keyCodes[2], 0);
+		HandleKeyInput(keyCodes[3], 1);
+		HandleKeyInput(keyCodes[4], 2);
 	}
 
-	private void HandleKeyInput(KeyCode _keyCode, AnswerOptions _option)
+	private void HandleKeyInput(KeyCode _keyCode, int _option)
 	{
 		if (Input.GetKeyDown(_keyCode))
 		{
@@ -55,18 +55,21 @@ public class GameMasterControls : MonoBehaviour
 		taskManager.TaskSelectUI(selectedTaskIndex);
 	}
 
-	private void SubmitAnswer(AnswerOptions answer)
+	private void SubmitAnswer(int answer)
 	{
 		if (selectedTaskIndex >= 0 && selectedTaskIndex < taskManager.taskQueue.Count)
 		{
 			Task selectedTask = taskManager.taskQueue[selectedTaskIndex];
-			selectedTask.SubmitAnswer(answer);
-
-			taskManager.RemoveTask(selectedTask);
-
-			if (taskManager.taskQueue.Count > 0)
+			bool check = selectedTask.SubmitAnswer(answer);
+			
+			if (check)
 			{
-				SelectNextTask();
+				taskManager.RemoveTask(selectedTask);
+
+				if (taskManager.taskQueue.Count > 0)
+				{
+					SelectNextTask();
+				}
 			}
 		}
 	}
