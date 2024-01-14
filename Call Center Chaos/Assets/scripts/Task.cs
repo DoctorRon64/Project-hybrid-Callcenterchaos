@@ -24,7 +24,8 @@ public class Task : MonoBehaviour
 
     [Header("Options")]
     [SerializeField] private List<string> Options = new List<string>();
-    [SerializeField] private Text[] optionsText;
+    [SerializeField] private List<PhoneCall> Calls = new List<PhoneCall>();
+	[SerializeField] private Text[] optionsText;
     private int OptionCount => Options.Count;
     public int SelectedOption = 0;
     [SerializeField] private float timeDuration;
@@ -78,9 +79,33 @@ public class Task : MonoBehaviour
         }
     }
 
-    private void HandleTaskSubmission()
-    {
+	private void HandleTaskSubmission()
+	{
+		int selectedAnswer = SelectedOption;
+
+		if (selectedAnswer >= 0 && selectedAnswer < Options.Count)
+		{
+			SubmitAnswerToPhoneCall(selectedAnswer);
+		}
+		else
+		{
+			Debug.LogWarning("Invalid answer option: " + selectedAnswer);
+		}
+
 		manager.RemoveTask(this);
+	}
+
+	private void SubmitAnswerToPhoneCall(int answer)
+	{
+		if (answer < Calls.Count)
+		{
+			PhoneCall selectedCall = Calls[answer];
+			selectedCall.StartCall();
+		}
+		else
+		{
+			Debug.LogWarning("Invalid answer option: " + answer);
+		}
 	}
 
     public void UpdateTaskTime(float deltaTime)
