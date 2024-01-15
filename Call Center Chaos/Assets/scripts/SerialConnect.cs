@@ -21,6 +21,7 @@ public class SerialConnect : MonoBehaviour
     private void Start()
     {
         instance = this;
+        DontDestroyOnLoad(gameObject);
         RefreshPortsDropdown();
         PortSelector.onValueChanged.AddListener(delegate { ConnectToPort(); });
         ConnectToPort();

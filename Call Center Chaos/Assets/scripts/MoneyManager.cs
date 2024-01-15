@@ -13,11 +13,10 @@ public class MoneyManager : MonoBehaviour
     [SerializeField] private float decreaseRate;
     private float decreaseTimer;
 
-
-
     private void Start()
     {
         instance = this;
+        MoneyDisplay.text = MoneyValue.ToString();
     }
 
     private void Update()
@@ -27,6 +26,7 @@ public class MoneyManager : MonoBehaviour
         {
             MoneyValue -= decreaseAmount;
             MoneyValue = Mathf.Clamp(MoneyValue, 0, 9999999);
+            MoneyDisplay.text = MoneyValue.ToString();
         }
         if(MoneyValue <= 0)
         {
@@ -37,6 +37,7 @@ public class MoneyManager : MonoBehaviour
     public void AddAmount(int amount)
     {
         MoneyValue += amount;
+        MoneyDisplay.text = amount.ToString();
     }
 
     private void GameOver()

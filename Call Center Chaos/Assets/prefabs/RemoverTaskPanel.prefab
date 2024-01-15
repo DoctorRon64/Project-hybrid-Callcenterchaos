@@ -478,9 +478,9 @@ GameObject:
   - component: {fileID: 9109713217390787341}
   - component: {fileID: 5272616516367045183}
   - component: {fileID: 2415808527263428704}
-  - component: {fileID: 386682123674330979}
+  - component: {fileID: -3689576423746605812}
   m_Layer: 5
-  m_Name: TaskPanel
+  m_Name: RemoverTaskPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,7 +548,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &386682123674330979
+--- !u!114 &-3689576423746605812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -557,30 +557,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 3855813271506709169}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1d349061dc32dd46b3831c0bf34de7f, type: 3}
+  m_Script: {fileID: 11500000, guid: cf28460455b19b74aa039a25a60186f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskName: ExampleTask
-  taskDescription: ExampleDescription
+  taskName: ExampleRemover
+  taskDescription: This type of task can remove a TaskId from being permitted.
   taskId: 2
-  deselectColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
-  selectColor: {r: 1, g: 1, b: 1, a: 1}
-  Options:
-  - What the Heelll
-  - No fackin way
+  deselectColor: {r: 0, g: 0, b: 0, a: 0}
+  selectColor: {r: 0, g: 0, b: 0, a: 0}
+  Options: []
   Calls: []
   Rewards: 
-  optionsText:
-  - {fileID: 7383737201725660917}
-  - {fileID: 7693605284446267084}
-  - {fileID: 6996456821230712502}
+  optionsText: []
   SelectedOption: 0
-  timeDuration: 25
-  coinAmount: 10
-  taskNameText: {fileID: 5561373088604711145}
-  taskDescriptionText: {fileID: 7034984872008688589}
-  timeText: {fileID: 4875226331243920177}
-  timeDisplay: {fileID: 5802664312149317439}
+  timeDuration: 0
+  coinAmount: 0
+  taskNameText: {fileID: 0}
+  taskDescriptionText: {fileID: 0}
+  timeText: {fileID: 0}
+  timeDisplay: {fileID: 0}
 --- !u!1 &5299495493079733758
 GameObject:
   m_ObjectHideFlags: 0
