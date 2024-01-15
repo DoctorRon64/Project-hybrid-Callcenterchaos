@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PhoneCallManager : MonoBehaviour
@@ -13,6 +14,7 @@ public class PhoneCallManager : MonoBehaviour
     public delegate void Updater(float deltaTime);
     public Updater UpdatePhoneCalls;
 
+    private List<TaskId> removeable = new List<TaskId>();
     [SerializeField] private List<PhoneCall> initialPhoneCalls = new();
     [SerializeField] private Queue<PhoneCall> phoneCallQueue = new();
     public PhoneCall currentCall;
@@ -49,7 +51,11 @@ public class PhoneCallManager : MonoBehaviour
     {
         if (phoneCallQueue.Count > 0)
         {
-            currentCall = phoneCallQueue.Dequeue();
+            PhoneCall newCall = phoneCallQueue.Dequeue();
+            while (removeable.Contains(newCall.task.GetComponent<Task>().taskId))
+            {
+                newCall = phoneCallQueue.Dequeue();
+            }
             yield return new WaitForSeconds(3);
             currentCall.StartCall();
             Debug.Log($"Starting call; {phoneCallQueue.Count} left in queue");
@@ -84,5 +90,10 @@ public class PhoneCallManager : MonoBehaviour
         {
             currentCall.PickUpCall();
         }
+    }
+
+    public void RemoveAllOfTag(TaskId tag)
+    {
+        removeable.Add(tag);
     }
 }
