@@ -9,11 +9,13 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private AudioMixer AudioMixer;
     [SerializeField] private AudioMixerGroup[] AudioMixerGroup = new AudioMixerGroup[2];
     [SerializeField] private Slider[] VolumeSlider = new Slider[2];
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSourceVoice;
+    [SerializeField] private AudioSource audioSourceMusic;
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private Dropdown DropdownR;
     bool toggle = true;
-    bool soundtoggle = false;
+    bool soundtoggle1 = false;
+    bool soundtoggle2 = false;
     Resolution[] resolutions;
 
     private void Awake()
@@ -87,16 +89,30 @@ public class SettingsMenu : MonoBehaviour
         settingsMenu.SetActive(_show);
     }
 
-    public void PlayExampleClip()
+    public void PlayVoiceClip()
     {
-        soundtoggle = !soundtoggle;
+        soundtoggle1 = !soundtoggle1;
 
-        if (soundtoggle)
+        if (soundtoggle1)
         {
-            audioSource.Play(); 
+            audioSourceVoice.Play(); 
         } else
         {
-            audioSource.Pause();
+            audioSourceVoice.Pause();
+        }
+    }
+
+    public void PlayMusicClip()
+    {
+        soundtoggle2 = !soundtoggle2;
+
+        if (soundtoggle2)
+        {
+            audioSourceMusic.Play();
+        }
+        else
+        {
+            audioSourceMusic.Pause();
         }
     }
 }
