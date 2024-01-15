@@ -15,29 +15,30 @@ public enum TaskId
 public class Task : MonoBehaviour
 {
     [Header("Values")]
-    [SerializeField] private string taskName;
-    [SerializeField] private string taskDescription;
-    [SerializeField] private TaskId taskId;
+    [SerializeField] protected string taskName;
+    [SerializeField] protected string taskDescription;
+    [SerializeField] public TaskId taskId;
 
-    [SerializeField] private Color deselectColor;
-    [SerializeField] private Color selectColor;
+    [SerializeField] protected Color deselectColor;
+    [SerializeField] protected Color selectColor;
 
     [Header("Options")]
-    [SerializeField] private List<string> Options = new List<string>();
-    [SerializeField] private List<PhoneCall> Calls = new List<PhoneCall>();
-	[SerializeField] private Text[] optionsText;
-    private int OptionCount => Options.Count;
+    [SerializeField] protected List<string> Options = new List<string>();
+    [SerializeField] protected List<PhoneCall> Calls = new List<PhoneCall>();
+    [SerializeField] protected List<int> Rewards = new List<int>();
+    [SerializeField] protected Text[] optionsText;
+    protected int OptionCount => Options.Count;
     public int SelectedOption = 0;
-    [SerializeField] private float timeDuration;
-    [SerializeField] private int coinAmount;
-    private float currentTime;
+    [SerializeField] protected float timeDuration;
+    [SerializeField] protected int coinAmount;
+    protected float currentTime;
 
     [Header("References")]
-    [SerializeField] private Text taskNameText;
-    [SerializeField] private Text taskDescriptionText;
-    [SerializeField] private Text timeText;
-    [SerializeField] private Image timeDisplay;
-    private TaskManager manager;
+    [SerializeField] protected Text taskNameText;
+    [SerializeField] protected Text taskDescriptionText;
+    [SerializeField] protected Text timeText;
+    [SerializeField] protected Image timeDisplay;
+    protected TaskManager manager;
     [System.NonSerialized] public GameObject associatedGameObject;
 
     public void SetupTaskManager(TaskManager _manager)
@@ -95,11 +96,12 @@ public class Task : MonoBehaviour
 		manager.RemoveTask(this);
 	}
 
-	private void SubmitAnswerToPhoneCall(int answer)
+	protected virtual void SubmitAnswerToPhoneCall(int answer)
 	{
 		if (answer < Calls.Count)
 		{
 			PhoneCall selectedCall = Calls[answer];
+            MoneyManager.instance.AddAmount(Rewards[answer]);
 			selectedCall.StartCall();
 		}
 		else

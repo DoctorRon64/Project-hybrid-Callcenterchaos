@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
@@ -79,8 +80,9 @@ public class SerialConnect : MonoBehaviour
             activePort.DataReceived += ReceiveData;
             Debug.Log($"Connected to {portName}");
         }
-        catch
+        catch(Exception e)
         {
+            Debug.LogException(e);
             Debug.Log($"Couldn't connect to {portName}");
         }
 
