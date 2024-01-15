@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1990e5e4f7ab25c4daeb89a753000e32, type: 3}
   m_Name: DebugCall
   m_EditorClassIdentifier: 
-  Audio: {fileID: 8300000, guid: d9fd505bc20783c4c9c82731242766a3, type: 3}
+  Audio: {fileID: 8300000, guid: 68077868737aae545a297e9a9e5e4d77, type: 3}
   task: {fileID: 3855813271506709169, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-  ringTime: 15
+  ringTime: 21.8
   PickedUp: 1
   manager: {fileID: 0}

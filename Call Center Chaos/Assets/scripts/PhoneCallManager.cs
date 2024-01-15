@@ -44,7 +44,6 @@ public class PhoneCallManager : MonoBehaviour
     public void AddCallToQueue(PhoneCall call)
     {
         phoneCallQueue.Enqueue(call);
-
     }
 
     private IEnumerator StartNextCall()

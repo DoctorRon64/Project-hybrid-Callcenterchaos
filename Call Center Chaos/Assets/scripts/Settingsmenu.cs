@@ -20,6 +20,7 @@ public class SettingsMenu : MonoBehaviour
 
     private void Awake()
     {
+        settingsMenu.SetActive(false);
         float[] volumes = new float[2];
 
         AudioMixer.GetFloat("music", out volumes[0]);
@@ -56,7 +57,7 @@ public class SettingsMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             toggle = !toggle;
             ShowSettingsMenu(toggle);

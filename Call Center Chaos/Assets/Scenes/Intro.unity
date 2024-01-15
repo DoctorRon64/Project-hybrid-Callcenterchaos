@@ -2594,7 +2594,7 @@ MonoBehaviour:
   Ringtone: {fileID: 8300000, guid: f799e3889bf8ec141ba863086f4424b4, type: 3}
   initialPhoneCalls:
   - {fileID: 11400000, guid: 80ef0bbf5dc3d754ba3ce902ec3ec600, type: 2}
-  currentCall: {fileID: 0}
+  currentCall: {fileID: 11400000, guid: 85980642cc46fb94ba3d942ebcaadeec, type: 2}
 --- !u!4 &1003231479
 Transform:
   m_ObjectHideFlags: 0
