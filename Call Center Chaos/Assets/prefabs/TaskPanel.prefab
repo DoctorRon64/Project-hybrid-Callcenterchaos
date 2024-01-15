@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Options1: dit en dat zen zus enzo ofzo ik weet het eigenlijk niet'
+  m_Text: 
 --- !u!1 &705708487943797000
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +391,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Options1: dit en dat zen zus enzo ofzo ik weet het eigenlijk niet'
+  m_Text: 
 --- !u!1 &2927653841546510840
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,10 +566,10 @@ MonoBehaviour:
   deselectColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
   selectColor: {r: 1, g: 1, b: 1, a: 1}
   Options:
-  - What the Heelll
-  - No fackin way
+  - what the helllll
+  - tesstinnfff
+  - 
   Calls: []
-  Rewards: 
   optionsText:
   - {fileID: 7383737201725660917}
   - {fileID: 7693605284446267084}
@@ -712,14 +712,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 40
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 364.4, y: 187.2}
+  m_CellSize: {x: 360, y: 110}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -801,7 +801,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Options1: dit en dat zen zus enzo ofzo ik weet het eigenlijk niet'
+  m_Text: 
 --- !u!1 &7481408852960103367
 GameObject:
   m_ObjectHideFlags: 0
