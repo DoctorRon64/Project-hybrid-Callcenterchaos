@@ -24,6 +24,7 @@ public class Task : MonoBehaviour
 
     [Header("Options")]
     [SerializeField] protected List<string> Options = new List<string>();
+    [SerializeField] protected List<AudioClip> Responses = new List<AudioClip>();
     [SerializeField] protected List<PhoneCall> Calls = new List<PhoneCall>();
     [SerializeField] protected List<int> Rewards = new List<int>();
     [SerializeField] protected Text[] optionsText;
@@ -102,6 +103,8 @@ public class Task : MonoBehaviour
 		{
 			PhoneCall selectedCall = Calls[answer];
             MoneyManager.instance.AddAmount(Rewards[answer]);
+            PhoneCallManager.instance.Player.clip = Responses[answer];
+            PhoneCallManager.instance.Player.Play();
 			selectedCall.StartCall();
 		}
 		else
