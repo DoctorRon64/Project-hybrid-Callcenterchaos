@@ -12,14 +12,6 @@ public class PhoneCall : ScriptableObject
     [HideInInspector]public bool PickedUp;
     [HideInInspector]public PhoneCallManager manager;
 
-    public PhoneCall(AudioClip _audio, GameObject _task, float _ringTime, PhoneCallManager _manager)
-    {
-        Audio = _audio;
-        task = _task;
-        ringTime = _ringTime;
-        manager = _manager;
-    }
-
     public void PhoneUpdate(float deltaTime)
     {
         timer -= deltaTime;
@@ -64,7 +56,7 @@ public class PhoneCall : ScriptableObject
         manager.Player.Play();
     }
 
-    private void CancelCall()
+    protected virtual void CancelCall()
     {
         Debug.Log("Current call cancelled");
         manager.Player.Stop();
@@ -78,7 +70,7 @@ public class PhoneCall : ScriptableObject
     //Ja ik ben Sven ik plaats deze comment ik ben dOM
     //Haha jazeker ook ben ik zo lang als mensen naar me kijken vragen ze waar de ingang is
     //2+2=3 haha ik ben zo slim
-    private void EndCall()
+    protected virtual void EndCall()
     {
         Debug.Log("Current call ended");
         if(task != null)
@@ -91,7 +83,7 @@ public class PhoneCall : ScriptableObject
         EndProcess();
     }
 
-    private void EndProcess()
+    protected void EndProcess()
     {
         manager.UpdatePhoneCalls -= PhoneUpdate;
         manager.currentCall = null;
