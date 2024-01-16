@@ -3174,7 +3174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskManager: {fileID: 745957895}
-  keyCodes: 1401000013010000310000003200000033000000
+  keyCodes: 1401000013010000010100000201000003010000
 --- !u!4 &804942191
 Transform:
   m_ObjectHideFlags: 0
@@ -4338,7 +4338,7 @@ MonoBehaviour:
   Ringtone: {fileID: 8300000, guid: f799e3889bf8ec141ba863086f4424b4, type: 3}
   callDelay: 4
   initialPhoneCalls:
-  - {fileID: 11400000, guid: 8e944d41029cc634a9afca3661dda5c7, type: 2}
+  - {fileID: 11400000, guid: 246f2fd9126d80d478c5fdb90f3b4a07, type: 2}
   currentCall: {fileID: 0}
 --- !u!4 &1313231582
 Transform:
@@ -5359,9 +5359,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyDisplay: {fileID: 1886937310}
-  MoneyValue: 0
-  decreaseAmount: 0
-  decreaseRate: 0
+  MoneyValue: 10000
+  decreaseAmount: 100
+  decreaseRate: 20
 --- !u!1 &1730676549
 GameObject:
   m_ObjectHideFlags: 0
