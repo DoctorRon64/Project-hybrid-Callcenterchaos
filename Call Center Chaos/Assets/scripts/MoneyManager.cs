@@ -16,17 +16,18 @@ public class MoneyManager : MonoBehaviour
     private void Start()
     {
         instance = this;
-        MoneyDisplay.text = MoneyValue.ToString();
+        SetDisplayAmount(MoneyValue);
     }
 
     private void Update()
     {
         decreaseTimer += Time.deltaTime;
-        if(decreaseTimer > decreaseRate)
+        if(decreaseTimer >= decreaseRate)
         {
             MoneyValue -= decreaseAmount;
             MoneyValue = Mathf.Clamp(MoneyValue, 0, 9999999);
-            MoneyDisplay.text = MoneyValue.ToString();
+            SetDisplayAmount(MoneyValue);
+            decreaseTimer = 0;
         }
         if(MoneyValue <= 0)
         {
@@ -37,7 +38,12 @@ public class MoneyManager : MonoBehaviour
     public void AddAmount(int amount)
     {
         MoneyValue += amount;
-        MoneyDisplay.text = amount.ToString();
+        SetDisplayAmount(MoneyValue);
+    }
+
+    private void SetDisplayAmount(int amount)
+    {
+        MoneyDisplay.text = $"Self worth: {amount}$";
     }
 
     private void GameOver()
