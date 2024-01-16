@@ -26,9 +26,10 @@ public class Task : MonoBehaviour
     [Header("Options")]
     [SerializeField] protected List<string> Options = new List<string>();
     [SerializeField] protected List<AudioClip> Responses = new List<AudioClip>();
-    [SerializeField] protected List<PhoneCall> Calls = new List<PhoneCall>();
+    [SerializeField] public List<PhoneCall> Calls = new List<PhoneCall>();
     [SerializeField] protected List<int> Rewards = new List<int>();
     [SerializeField] protected Text[] optionsText;
+    [SerializeField] public int OnCancelOption;
     protected int OptionCount => Options.Count;
     public int SelectedOption = 0;
     [SerializeField] protected float timeDuration;
