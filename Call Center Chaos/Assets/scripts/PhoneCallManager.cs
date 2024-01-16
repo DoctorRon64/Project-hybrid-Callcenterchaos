@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using UnityEngine;
 
 public class PhoneCallManager : MonoBehaviour
@@ -10,6 +11,10 @@ public class PhoneCallManager : MonoBehaviour
     [HideInInspector] public TaskManager taskManager;
     public AudioSource Player;
     public AudioClip Ringtone;
+
+    [SerializeField] private float callDelay;
+    private float delayTimer;
+    private bool buttonDown;
 
     public delegate void Updater(float deltaTime);
     public Updater UpdatePhoneCalls;
@@ -28,6 +33,8 @@ public class PhoneCallManager : MonoBehaviour
         }
         instance = this;
         taskManager = FindObjectOfType<TaskManager>();
+        SerialConnect.instance.ButtonEvent += ButtonEvent;
+        delayTimer = callDelay;
     }
 
 
@@ -35,9 +42,14 @@ public class PhoneCallManager : MonoBehaviour
     {
         UpdatePhoneCalls?.Invoke(Time.deltaTime);
 
-        if (currentCall == null)
+        if (currentCall == null && buttonDown)
         {
-            StartCoroutine(StartNextCall());
+            delayTimer -= Time.deltaTime;
+            if (delayTimer < 0)
+            {
+                StartNextCall();
+                delayTimer = callDelay;
+            }
         }
     }
 
@@ -46,7 +58,7 @@ public class PhoneCallManager : MonoBehaviour
         phoneCallQueue.Enqueue(call);
     }
 
-    private IEnumerator StartNextCall()
+    private void StartNextCall()
     {
         if (phoneCallQueue.Count > 0)
         {
@@ -55,7 +67,6 @@ public class PhoneCallManager : MonoBehaviour
             {
                 newCall = phoneCallQueue.Dequeue();
             }
-            yield return new WaitForSeconds(3);
             currentCall.StartCall();
             Debug.Log($"Starting call; {phoneCallQueue.Count} left in queue");
         }
@@ -94,5 +105,10 @@ public class PhoneCallManager : MonoBehaviour
     public void RemoveAllOfTag(TaskId tag)
     {
         removeable.Add(tag);
+    }
+
+    private void ButtonEvent(int index, bool state)
+    {
+        buttonDown = state ? true : false;
     }
 }
