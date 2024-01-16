@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum TaskId
@@ -32,6 +33,8 @@ public class Task : MonoBehaviour
     public int SelectedOption = 0;
     [SerializeField] protected float timeDuration;
     [SerializeField] protected int coinAmount;
+    [SerializeField] protected bool endTaskTree = false;
+    [SerializeField] protected string finishSceneName = "";
     protected float currentTime;
 
     [Header("References")]
@@ -85,7 +88,7 @@ public class Task : MonoBehaviour
 	{
 		int selectedAnswer = SelectedOption;
 
-		if (selectedAnswer >= 0 && selectedAnswer < Options.Count)
+		if (selectedAnswer >= 0 && selectedAnswer < Options.Count && !endTaskTree)
 		{
 			SubmitAnswerToPhoneCall(selectedAnswer);
 		}
@@ -93,6 +96,11 @@ public class Task : MonoBehaviour
 		{
 			Debug.LogWarning("Invalid answer option: " + selectedAnswer);
 		}
+
+        if (endTaskTree)
+        {
+            SceneManager.LoadScene(finishSceneName);
+        }
 
 		manager.RemoveTask(this);
 	}
