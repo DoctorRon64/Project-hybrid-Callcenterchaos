@@ -563,19 +563,31 @@ MonoBehaviour:
   taskName: ExampleRemover
   taskDescription: This type of task can remove a TaskId from being permitted.
   taskId: 2
-  deselectColor: {r: 0, g: 0, b: 0, a: 0}
-  selectColor: {r: 0, g: 0, b: 0, a: 0}
-  Options: []
+  deselectColor: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
+  selectColor: {r: 1, g: 1, b: 1, a: 1}
+  Options:
+  - 
+  - 
+  Responses: []
   Calls: []
   Rewards: 
-  optionsText: []
+  optionsText:
+  - {fileID: 7383737201725660917}
+  - {fileID: 7693605284446267084}
+  - {fileID: 6996456821230712502}
+  OnCancelOption: 0
   SelectedOption: 0
   timeDuration: 0
   coinAmount: 0
-  taskNameText: {fileID: 0}
-  taskDescriptionText: {fileID: 0}
-  timeText: {fileID: 0}
-  timeDisplay: {fileID: 0}
+  endTaskTree: 0
+  finishSceneName: 
+  taskNameText: {fileID: 5561373088604711145}
+  taskDescriptionText: {fileID: 7034984872008688589}
+  timeText: {fileID: 4875226331243920177}
+  timeDisplay: {fileID: 5802664312149317439}
+  RemoveOption0: 
+  RemoveOption1: 
+  RemoveOption2: 
 --- !u!1 &5299495493079733758
 GameObject:
   m_ObjectHideFlags: 0

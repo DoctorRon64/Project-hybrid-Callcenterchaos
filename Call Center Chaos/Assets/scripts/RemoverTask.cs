@@ -8,7 +8,6 @@ public class RemoverTask : Task
     [SerializeField] private List<TaskId> RemoveOption1 = new List<TaskId>();
     [SerializeField] private List<TaskId> RemoveOption2 = new List<TaskId>();
 
-
     protected override void SubmitAnswerToPhoneCall(int answer)
     {
         if (answer < Calls.Count)

@@ -18,15 +18,12 @@ public class Task : MonoBehaviour
     [SerializeField] protected string taskDescription;
     [SerializeField] public TaskId taskId;
 
-    [SerializeField] protected Color deselectColor;
-    [SerializeField] protected Color selectColor;
 
     [Header("Options")]
     [SerializeField] protected List<string> Options = new List<string>();
     [SerializeField] protected List<AudioClip> Responses = new List<AudioClip>();
     [SerializeField] public List<PhoneCall> Calls = new List<PhoneCall>();
     [SerializeField] protected List<int> Rewards = new List<int>();
-    [SerializeField] protected Text[] optionsText;
     [SerializeField] public int OnCancelOption;
     protected int OptionCount => Options.Count;
     public int SelectedOption = 0;
@@ -36,7 +33,10 @@ public class Task : MonoBehaviour
     [SerializeField] protected string finishSceneName = "";
     protected float currentTime;
 
-    [Header("References")]
+    [Header("References please dont edit")]
+    [SerializeField] protected Text[] optionsText;
+    [SerializeField] protected Color deselectColor;
+    [SerializeField] protected Color selectColor;
     [SerializeField] protected Text taskNameText;
     [SerializeField] protected Text taskDescriptionText;
     [SerializeField] protected Text timeText;
