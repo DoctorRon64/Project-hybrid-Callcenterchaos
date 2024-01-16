@@ -70,6 +70,8 @@ public class PhoneCall : ScriptableObject
         manager.Player.Stop();
         SerialConnect.instance.SwitchLed(false);
         manager.currentCall = null;
+        Task taskComponent = task.GetComponent<Task>();
+        manager.AddCallToQueue(taskComponent.Calls[taskComponent.OnCancelOption]);
         EndProcess();
 
     }

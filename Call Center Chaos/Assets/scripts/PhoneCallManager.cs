@@ -115,5 +115,10 @@ public class PhoneCallManager : MonoBehaviour
     private void ButtonEvent(int index, bool state)
     {
         buttonDown = state ? true : false;
+
+        if(state && Player.isPlaying)
+        {
+            Player.Stop();
+        }
     }
 }
