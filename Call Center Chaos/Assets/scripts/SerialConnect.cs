@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 public class SerialConnect : MonoBehaviour
 {
-    public byte DebugCommand;
+    public string DebugPort;
+    public bool UseDebugPort;
     public int LedCount;
     public Dropdown PortSelector;
     private List<string> ports;
@@ -20,10 +21,17 @@ public class SerialConnect : MonoBehaviour
 
     private void Start()
     {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
         instance = this;
         DontDestroyOnLoad(gameObject);
-        RefreshPortsDropdown();
-        PortSelector.onValueChanged.AddListener(delegate { ConnectToPort(); });
+        if (PortSelector != null)
+        {
+            RefreshPortsDropdown();
+            PortSelector.onValueChanged.AddListener(delegate { ConnectToPort(); });
+        }
         ConnectToPort();
     }
 
@@ -72,7 +80,15 @@ public class SerialConnect : MonoBehaviour
 
     public void ConnectToPort()
     {
-        string portName = ports[PortSelector.value];
+        string portName;
+        if (UseDebugPort)
+        {
+            portName = DebugPort;
+        }
+        else
+        {
+            portName = ports[PortSelector.value];
+        }
         activePort = new SerialPort(portName, 9600);
 
         try
@@ -116,12 +132,6 @@ public class SerialConnect : MonoBehaviour
         if (stateInt == 1) { state = true; }
         ButtonEvent?.Invoke(index, state);
         Debug.Log($"Button {index} state change: {state}");
-    }
-
-    [ContextMenu("Test value")]
-    public void DebugTest()
-    {
-        HandleData(DebugCommand);
     }
 
     private void OnDestroy()

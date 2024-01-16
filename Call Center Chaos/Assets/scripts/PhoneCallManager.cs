@@ -9,12 +9,13 @@ public class PhoneCallManager : MonoBehaviour
     public static PhoneCallManager instance;
 
     [HideInInspector] public TaskManager taskManager;
+    public IncomingCallAnimationHandler incoming;
     public AudioSource Player;
     public AudioClip Ringtone;
 
     [SerializeField] private float callDelay;
     private float delayTimer;
-    private bool buttonDown;
+    private bool buttonDown = true;
 
     public delegate void Updater(float deltaTime);
     public Updater UpdatePhoneCalls;
@@ -33,6 +34,7 @@ public class PhoneCallManager : MonoBehaviour
         }
         instance = this;
         taskManager = FindObjectOfType<TaskManager>();
+        incoming = FindObjectOfType<IncomingCallAnimationHandler>();
         SerialConnect.instance.ButtonEvent += ButtonEvent;
         delayTimer = callDelay;
     }
@@ -67,6 +69,7 @@ public class PhoneCallManager : MonoBehaviour
             {
                 newCall = phoneCallQueue.Dequeue();
             }
+            currentCall = newCall;
             currentCall.StartCall();
             Debug.Log($"Starting call; {phoneCallQueue.Count} left in queue");
         }
@@ -82,6 +85,7 @@ public class PhoneCallManager : MonoBehaviour
         {
             Player.clip = Ringtone;
             Player.Play();
+            incoming.SetCall(true);
         }
     }
 
@@ -90,6 +94,7 @@ public class PhoneCallManager : MonoBehaviour
         if (Player.clip == Ringtone)
         {
             Player.Stop();
+            incoming.SetCall(false);
         }
     }
 

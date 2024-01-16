@@ -92,6 +92,7 @@ public class PhoneCall : ScriptableObject
     private void EndProcess()
     {
         manager.UpdatePhoneCalls -= PhoneUpdate;
+        manager.currentCall = null;
         SerialConnect.instance.ButtonEvent -= ButtonEvent;
     }
 }

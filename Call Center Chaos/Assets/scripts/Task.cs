@@ -105,7 +105,10 @@ public class Task : MonoBehaviour
             MoneyManager.instance.AddAmount(Rewards[answer]);
             PhoneCallManager.instance.Player.clip = Responses[answer];
             PhoneCallManager.instance.Player.Play();
-			selectedCall.StartCall();
+            if (selectedCall != null)
+            {
+                PhoneCallManager.instance.AddCallToQueue(selectedCall);
+            }
 		}
 		else
 		{
