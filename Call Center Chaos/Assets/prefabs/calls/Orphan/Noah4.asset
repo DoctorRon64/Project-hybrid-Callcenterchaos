@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Noah4
   m_EditorClassIdentifier: 
   Audio: {fileID: 8300000, guid: 867005a7073d69442a7da1ac8e6118dc, type: 3}
-  task: {fileID: 0}
+  task: {fileID: 3855813271506709169, guid: 723f16dfe7705ca4c8ca653365395090, type: 3}
+  ringTime: 0
   PickedUp: 0
   manager: {fileID: 0}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Orphan5
   m_EditorClassIdentifier: 
   Audio: {fileID: 8300000, guid: d529d6edca2514742aafc5f8d6021fbb, type: 3}
-  task: {fileID: 0}
+  task: {fileID: 3855813271506709169, guid: 578b52c368ca5ea48b24cd2688a3c328, type: 3}
+  ringTime: 0
   PickedUp: 0
   manager: {fileID: 0}

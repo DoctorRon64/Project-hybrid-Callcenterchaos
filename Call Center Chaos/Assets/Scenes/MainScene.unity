@@ -4824,7 +4824,7 @@ MonoBehaviour:
   Ringtone: {fileID: 8300000, guid: f799e3889bf8ec141ba863086f4424b4, type: 3}
   callDelay: 4
   initialPhoneCalls:
-  - {fileID: 11400000, guid: 246f2fd9126d80d478c5fdb90f3b4a07, type: 2}
+  - {fileID: 11400000, guid: c001579ec614e2f49a437051516609a6, type: 2}
   currentCall: {fileID: 0}
 --- !u!4 &1313231582
 Transform:
@@ -7804,7 +7804,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -46.614044}
+  m_AnchoredPosition: {x: 0, y: -46.614014}
   m_SizeDelta: {x: 0, y: -93.22821}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099727647
