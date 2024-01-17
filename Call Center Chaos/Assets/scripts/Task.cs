@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum TaskId
@@ -34,8 +35,6 @@ public class Task : MonoBehaviour
         }
     }
     [SerializeField] protected int coinAmount;
-    [SerializeField] protected bool endTaskTree = false;
-    [SerializeField] protected string finishSceneName = "";
     protected float currentTime;
 
     [Header("References please dont edit")]
@@ -88,22 +87,17 @@ public class Task : MonoBehaviour
         }
     }
 
-    private void HandleTaskSubmission()
+    public virtual void HandleTaskSubmission()
     {
         int selectedAnswer = SelectedOption;
 
-        if (selectedAnswer >= 0 && selectedAnswer < Options.Count && !endTaskTree)
+        if (selectedAnswer >= 0 && selectedAnswer < Options.Count)
         {
             SubmitAnswerToPhoneCall(selectedAnswer);
         }
         else
         {
             Debug.LogWarning("Invalid answer option: " + selectedAnswer);
-        }
-
-        if (endTaskTree)
-        {
-            SceneManager.LoadScene(finishSceneName);
         }
 
         manager.RemoveTask(this);

@@ -18,9 +18,9 @@ public class TaskTimeHolder : MonoBehaviour
     public float GetTaskDuration(TaskId taskId) {
         switch (taskId)
         {
-            case TaskId.AI: return AITime; break;
-            case TaskId.President: return presidentTime; break;
-            case TaskId.Italy: return italyTime; break;
-            default: return homeworkTime; break;
+            case TaskId.AI: return AITime;
+            case TaskId.President: return presidentTime;
+            case TaskId.Italy: return italyTime;
+            default: return homeworkTime;
         }
     } }
