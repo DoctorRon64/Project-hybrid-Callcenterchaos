@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990e5e4f7ab25c4daeb89a753000e32, type: 3}
+  m_Name: President4
+  m_EditorClassIdentifier: 
+  Audio: {fileID: 8300000, guid: 67d66f1f9bb40414c8b9b703934156fe, type: 3}
+  task: {fileID: 0}
+  PickedUp: 0
+  manager: {fileID: 0}

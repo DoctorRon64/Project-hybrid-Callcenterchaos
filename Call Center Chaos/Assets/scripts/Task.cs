@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum TaskId
@@ -17,7 +16,6 @@ public class Task : MonoBehaviour
     [SerializeField] protected string taskName;
     [SerializeField] protected string taskDescription;
     [SerializeField] public TaskId taskId;
-
 
     [Header("Options")]
     [SerializeField] protected List<string> Options = new List<string>();
