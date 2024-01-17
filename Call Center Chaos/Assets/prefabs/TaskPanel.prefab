@@ -560,28 +560,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d349061dc32dd46b3831c0bf34de7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskName: ExampleTask
-  taskDescription: ExampleDescription
-  taskId: 2
-  deselectColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-  selectColor: {r: 1, g: 1, b: 1, a: 1}
+  taskName: 'AI: Stonks'
+  taskDescription: Hey there AI fren. I LOVE crypto. I would like a bitcoin rising
+    up into the sky with a rocket, all whilst the stocks are going up, up, up!
+  taskId: 0
   Options:
-  - what the helllll
-  - tesstinnfff
-  - 
-  Responses: []
-  Calls: []
-  Rewards: 
+  - Hand the image to the mailman
+  - Fail
+  Responses:
+  - {fileID: 8300000, guid: 5605794e79442454d809f4869c2372e5, type: 3}
+  - {fileID: 8300000, guid: 80aefb703b0240549b1ca56889121946, type: 3}
+  Calls:
+  - {fileID: 11400000, guid: 9ad0bded0026a4140bd6b6fb5185c396, type: 2}
+  - {fileID: 11400000, guid: 9ad0bded0026a4140bd6b6fb5185c396, type: 2}
+  Rewards: 6400000000000000
+  OnCancelOption: 1
+  SelectedOption: 0
   optionsText:
   - {fileID: 7383737201725660917}
   - {fileID: 7693605284446267084}
   - {fileID: 6996456821230712502}
-  OnCancelOption: 0
-  SelectedOption: 0
-  timeDuration: 25
-  coinAmount: 10
-  endTaskTree: 0
-  finishSceneName: 
+  deselectColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
+  selectColor: {r: 1, g: 1, b: 1, a: 1}
   taskNameText: {fileID: 5561373088604711145}
   taskDescriptionText: {fileID: 7034984872008688589}
   timeText: {fileID: 4875226331243920177}
@@ -701,7 +701,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -190, y: 0}
+  m_AnchoredPosition: {x: -190, y: -220}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &840744826316015803

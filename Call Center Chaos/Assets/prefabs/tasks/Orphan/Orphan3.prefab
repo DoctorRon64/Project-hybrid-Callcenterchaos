@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskName
-      value: Question 1984 Banned?
+      value: Question What does R.E.M mean?
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: OnCancelOption
@@ -22,48 +22,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskDescription
-      value: Phone friend! Do you know in which country the book 1984 was banned?
-        Was it the USA or the Soviet Union?
+      value: Hi answer buddy! I wanna know what R.E.M. means! I think you dream a
+        lot when it happens.
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Rewards.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
+      objectReference: {fileID: 11400000, guid: 7ea195ab9deeddc43b2cc1a27a7c8fb8, type: 2}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Calls.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
+      objectReference: {fileID: 11400000, guid: 7ea195ab9deeddc43b2cc1a27a7c8fb8, type: 2}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[0]
-      value: Only the Soviet Union
+      value: Rapid Eye Movement
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[1]
-      value: Only the USA
-      objectReference: {fileID: 0}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Options.Array.data[2]
-      value: Both, actually
+      value: Receding Ear Muscle
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Rewards.Array.data[0]
@@ -72,18 +64,14 @@ PrefabInstance:
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 9cdcb4071c3b58f42b43f0ee23bdd7ed, type: 3}
+      objectReference: {fileID: 8300000, guid: b953230b0f93a2a4da53dbeead26a75a, type: 3}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: a31116aca4db4b245893e57b9d0b4040, type: 3}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Responses.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: a31116aca4db4b245893e57b9d0b4040, type: 3}
+      objectReference: {fileID: 8300000, guid: 73acf9cd1f4af69438856e0cc7ac176c, type: 3}
     - target: {fileID: 3855813271506709169, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Name
-      value: Orphan5
+      value: Orphan3
       objectReference: {fileID: 0}
     - target: {fileID: 9109713217390787341, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Pivot.x

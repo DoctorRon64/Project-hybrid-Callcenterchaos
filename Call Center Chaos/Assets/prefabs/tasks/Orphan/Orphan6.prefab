@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskName
-      value: Question 1984 Banned?
+      value: Question Plato wrote about?
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: OnCancelOption
@@ -22,20 +22,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskDescription
-      value: Phone friend! Do you know in which country the book 1984 was banned?
-        Was it the USA or the Soviet Union?
+      value: Phone helper buddy! Do you know the name of that guy Plato wrote about?
+        He was Plato's teacher I think.
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Rewards.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.data[0]
@@ -51,15 +51,15 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[0]
-      value: Only the Soviet Union
+      value: That would be Socrates.
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[1]
-      value: Only the USA
+      value: That's Diogenes, I believe.
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[2]
@@ -83,7 +83,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: a31116aca4db4b245893e57b9d0b4040, type: 3}
     - target: {fileID: 3855813271506709169, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Name
-      value: Orphan5
+      value: Orphan6
       objectReference: {fileID: 0}
     - target: {fileID: 9109713217390787341, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Pivot.x

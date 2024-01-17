@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskName
-      value: Question 1984 Banned?
+      value: What ended 1945?
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: OnCancelOption
@@ -22,8 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskDescription
-      value: Phone friend! Do you know in which country the book 1984 was banned?
-        Was it the USA or the Soviet Union?
+      value: Hey. What ended in 1945?
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.size
@@ -40,50 +39,46 @@ PrefabInstance:
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
+      objectReference: {fileID: 11400000, guid: b0b5a5cbc046ef948a24bbea45d1f668, type: 2}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
+      objectReference: {fileID: 11400000, guid: b0b5a5cbc046ef948a24bbea45d1f668, type: 2}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
+      objectReference: {fileID: 11400000, guid: b0b5a5cbc046ef948a24bbea45d1f668, type: 2}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[0]
-      value: Only the Soviet Union
+      value: 1944
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[1]
-      value: Only the USA
+      value: The Spanish Inquisition
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[2]
-      value: Both, actually
-      objectReference: {fileID: 0}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Rewards.Array.data[0]
-      value: 100
+      value: WWII
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 9cdcb4071c3b58f42b43f0ee23bdd7ed, type: 3}
+      objectReference: {fileID: 8300000, guid: 629854c79716d5e448fcb4001c1cfbac, type: 3}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: a31116aca4db4b245893e57b9d0b4040, type: 3}
+      objectReference: {fileID: 8300000, guid: 629854c79716d5e448fcb4001c1cfbac, type: 3}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: a31116aca4db4b245893e57b9d0b4040, type: 3}
+      objectReference: {fileID: 8300000, guid: 629854c79716d5e448fcb4001c1cfbac, type: 3}
     - target: {fileID: 3855813271506709169, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Name
-      value: Orphan5
+      value: Memelord2
       objectReference: {fileID: 0}
     - target: {fileID: 9109713217390787341, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Pivot.x

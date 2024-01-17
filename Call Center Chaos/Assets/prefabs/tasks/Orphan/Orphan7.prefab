@@ -14,28 +14,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskName
-      value: Question 1984 Banned?
+      value: Question Plato wrote about?
       objectReference: {fileID: 0}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 4875226331243920177, guid: 1da7b397039b51c4a86f71a1ba4a0b5f, type: 3}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: timeDisplay
+      value: 
+      objectReference: {fileID: 5802664312149317439, guid: 1da7b397039b51c4a86f71a1ba4a0b5f, type: 3}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: taskNameText
+      value: 
+      objectReference: {fileID: 5561373088604711145, guid: 1da7b397039b51c4a86f71a1ba4a0b5f, type: 3}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: OnCancelOption
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskDescription
-      value: Phone friend! Do you know in which country the book 1984 was banned?
-        Was it the USA or the Soviet Union?
+      value: Phone helper buddy! Do you know the name of that guy Plato wrote about?
+        He was Plato's teacher I think.
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Rewards.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.data[0]
@@ -50,16 +62,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: taskDescriptionText
+      value: 
+      objectReference: {fileID: 7034984872008688589, guid: 1da7b397039b51c4a86f71a1ba4a0b5f, type: 3}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[0]
-      value: Only the Soviet Union
+      value: That would be Socrates.
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[1]
-      value: Only the USA
+      value: That's Diogenes, I believe.
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[2]
@@ -81,9 +97,21 @@ PrefabInstance:
       propertyPath: Responses.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: a31116aca4db4b245893e57b9d0b4040, type: 3}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: optionsText.Array.data[0]
+      value: 
+      objectReference: {fileID: 7383737201725660917, guid: 1da7b397039b51c4a86f71a1ba4a0b5f, type: 3}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: optionsText.Array.data[1]
+      value: 
+      objectReference: {fileID: 7693605284446267084, guid: 1da7b397039b51c4a86f71a1ba4a0b5f, type: 3}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: optionsText.Array.data[2]
+      value: 
+      objectReference: {fileID: 6996456821230712502, guid: 1da7b397039b51c4a86f71a1ba4a0b5f, type: 3}
     - target: {fileID: 3855813271506709169, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Name
-      value: Orphan5
+      value: Orphan7
       objectReference: {fileID: 0}
     - target: {fileID: 9109713217390787341, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Pivot.x
@@ -165,8 +193,52 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3855813271506709169, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4079273848440718332}
   m_SourcePrefab: {fileID: 100100000, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+--- !u!1 &1211833976995388965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3855813271506709169, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+  m_PrefabInstance: {fileID: 2689727774774260884}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-4079273848440718332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211833976995388965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf28460455b19b74aa039a25a60186f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskName: YOU MADE AN ORPHAN CRY
+  taskDescription: DO YOU HAVE ANY IDEA OF WHAT YOU JUST DID? YOU MADE NATE CRY.
+    WHAT MADE YOU THINK YOU CAN PULL A "YOUR MOM" ON AN ORPHAN. YOU'RE FIRED. GOODBYE!
+  taskId: 3
+  Options: []
+  Responses: []
+  Calls: []
+  Rewards: 
+  OnCancelOption: 0
+  SelectedOption: 0
+  optionsText:
+  - {fileID: 7383737201725660917, guid: f999c562faccc3c41b15943a91a1e779, type: 3}
+  - {fileID: 7693605284446267084, guid: f999c562faccc3c41b15943a91a1e779, type: 3}
+  - {fileID: 6996456821230712502, guid: f999c562faccc3c41b15943a91a1e779, type: 3}
+  deselectColor: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
+  selectColor: {r: 1, g: 1, b: 1, a: 1}
+  taskNameText: {fileID: 5561373088604711145, guid: f999c562faccc3c41b15943a91a1e779, type: 3}
+  taskDescriptionText: {fileID: 7034984872008688589, guid: f999c562faccc3c41b15943a91a1e779, type: 3}
+  timeText: {fileID: 4875226331243920177, guid: f999c562faccc3c41b15943a91a1e779, type: 3}
+  timeDisplay: {fileID: 5802664312149317439, guid: f999c562faccc3c41b15943a91a1e779, type: 3}
+  RemoveOption0: 
+  RemoveOption1: 
+  RemoveOption2: 

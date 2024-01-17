@@ -10,80 +10,72 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskId
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskName
-      value: Question 1984 Banned?
+      value: 'Pizza: Lactose?'
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: OnCancelOption
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskDescription
-      value: Phone friend! Do you know in which country the book 1984 was banned?
-        Was it the USA or the Soviet Union?
+      value: Hi. I'd like to order your Asiago pizza. One question though, is it
+        lactose free?
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Rewards.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
+      objectReference: {fileID: 11400000, guid: 05ab5a71b43280443a2d7843513e0032, type: 2}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Calls.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
+      objectReference: {fileID: 11400000, guid: 05ab5a71b43280443a2d7843513e0032, type: 2}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[0]
-      value: Only the Soviet Union
+      value: Hell yeah
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[1]
-      value: Only the USA
-      objectReference: {fileID: 0}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Options.Array.data[2]
-      value: Both, actually
+      value: Nah
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Rewards.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: Rewards.Array.data[1]
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 9cdcb4071c3b58f42b43f0ee23bdd7ed, type: 3}
+      objectReference: {fileID: 8300000, guid: de3b15547fd3d054d8df45e45ad56f6f, type: 3}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: a31116aca4db4b245893e57b9d0b4040, type: 3}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Responses.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: a31116aca4db4b245893e57b9d0b4040, type: 3}
+      objectReference: {fileID: 8300000, guid: 1ec70b27fbeb95742a10961dc8a42343, type: 3}
     - target: {fileID: 3855813271506709169, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Name
-      value: Orphan5
+      value: Pizza_1_ T
       objectReference: {fileID: 0}
     - target: {fileID: 9109713217390787341, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Pivot.x

@@ -14,76 +14,93 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskName
-      value: Question 1984 Banned?
+      value: Nico is getting Bullied?
       objectReference: {fileID: 0}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 4875226331243920177, guid: aa21e9d0e814db3479fa80b5219453ec, type: 3}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: timeDisplay
+      value: 
+      objectReference: {fileID: 5802664312149317439, guid: aa21e9d0e814db3479fa80b5219453ec, type: 3}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: taskNameText
+      value: 
+      objectReference: {fileID: 5561373088604711145, guid: aa21e9d0e814db3479fa80b5219453ec, type: 3}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: OnCancelOption
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskDescription
-      value: Phone friend! Do you know in which country the book 1984 was banned?
-        Was it the USA or the Soviet Union?
+      value: Hi this is the caretaker of the orphanage. Can you explain to me why
+        Nico's been getting bullied by his teachers? His grades also haven't improved
+        at all! You know what. I'm gonna look somewhere else. Goodbye.
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Rewards.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
+      objectReference: {fileID: 11400000, guid: b0b5a5cbc046ef948a24bbea45d1f668, type: 2}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
+      objectReference: {fileID: 11400000, guid: 442a66b936c7b134095299f3d1e5d211, type: 2}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Calls.Array.data[2]
+      propertyPath: taskDescriptionText
       value: 
-      objectReference: {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
+      objectReference: {fileID: 7034984872008688589, guid: aa21e9d0e814db3479fa80b5219453ec, type: 3}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[0]
-      value: Only the Soviet Union
+      value: Ok
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[1]
-      value: Only the USA
-      objectReference: {fileID: 0}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Options.Array.data[2]
-      value: Both, actually
+      value: Sorry I might have gotten something wrong.
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Rewards.Array.data[0]
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 9cdcb4071c3b58f42b43f0ee23bdd7ed, type: 3}
+      objectReference: {fileID: 8300000, guid: 47a943b1d3e36e44e9c96ddc8f4d5c67, type: 3}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: a31116aca4db4b245893e57b9d0b4040, type: 3}
+      objectReference: {fileID: 8300000, guid: c370d1364bd8f6b48b689b7b10b84160, type: 3}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Responses.Array.data[2]
+      propertyPath: optionsText.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: a31116aca4db4b245893e57b9d0b4040, type: 3}
+      objectReference: {fileID: 7383737201725660917, guid: aa21e9d0e814db3479fa80b5219453ec, type: 3}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: optionsText.Array.data[1]
+      value: 
+      objectReference: {fileID: 7693605284446267084, guid: aa21e9d0e814db3479fa80b5219453ec, type: 3}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: optionsText.Array.data[2]
+      value: 
+      objectReference: {fileID: 6996456821230712502, guid: aa21e9d0e814db3479fa80b5219453ec, type: 3}
     - target: {fileID: 3855813271506709169, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Name
-      value: Orphan5
+      value: Memelord6
       objectReference: {fileID: 0}
     - target: {fileID: 9109713217390787341, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Pivot.x
