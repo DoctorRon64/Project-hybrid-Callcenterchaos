@@ -27,7 +27,14 @@ public class Task : MonoBehaviour
     [SerializeField] public int OnCancelOption;
     protected int OptionCount => Options.Count;
     public int SelectedOption = 0;
-    [SerializeField] protected float timeDuration;
+    [SerializeField]
+    protected float timeDuration
+    {
+        get
+        {
+            return TaskTimeHolder.instance.GetTaskDuration(taskId);
+        }
+    }
     [SerializeField] protected int coinAmount;
     [SerializeField] protected bool endTaskTree = false;
     [SerializeField] protected string finishSceneName = "";
@@ -70,7 +77,7 @@ public class Task : MonoBehaviour
 
     public bool SubmitAnswer(int answer)
     {
-        if (answer < OptionCount) 
+        if (answer < OptionCount)
         {
             SelectedOption = answer;
             HandleTaskSubmission();
@@ -83,32 +90,32 @@ public class Task : MonoBehaviour
         }
     }
 
-	private void HandleTaskSubmission()
-	{
-		int selectedAnswer = SelectedOption;
+    private void HandleTaskSubmission()
+    {
+        int selectedAnswer = SelectedOption;
 
-		if (selectedAnswer >= 0 && selectedAnswer < Options.Count && !endTaskTree)
-		{
-			SubmitAnswerToPhoneCall(selectedAnswer);
-		}
-		else
-		{
-			Debug.LogWarning("Invalid answer option: " + selectedAnswer);
-		}
+        if (selectedAnswer >= 0 && selectedAnswer < Options.Count && !endTaskTree)
+        {
+            SubmitAnswerToPhoneCall(selectedAnswer);
+        }
+        else
+        {
+            Debug.LogWarning("Invalid answer option: " + selectedAnswer);
+        }
 
         if (endTaskTree)
         {
             SceneManager.LoadScene(finishSceneName);
         }
 
-		manager.RemoveTask(this);
-	}
+        manager.RemoveTask(this);
+    }
 
-	protected virtual void SubmitAnswerToPhoneCall(int answer)
-	{
-		if (answer < Calls.Count)
-		{
-			PhoneCall selectedCall = Calls[answer];
+    protected virtual void SubmitAnswerToPhoneCall(int answer)
+    {
+        if (answer < Calls.Count)
+        {
+            PhoneCall selectedCall = Calls[answer];
             MoneyManager.instance.AddAmount(Rewards[answer]);
             PhoneCallManager.instance.Player.clip = Responses[answer];
             PhoneCallManager.instance.Player.Play();
@@ -116,12 +123,12 @@ public class Task : MonoBehaviour
             {
                 PhoneCallManager.instance.AddCallToQueue(selectedCall);
             }
-		}
-		else
-		{
-			Debug.LogWarning("Invalid answer option: " + answer);
-		}
-	}
+        }
+        else
+        {
+            Debug.LogWarning("Invalid answer option: " + answer);
+        }
+    }
 
     public void UpdateTaskTime(float deltaTime)
     {
