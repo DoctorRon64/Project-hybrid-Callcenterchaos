@@ -568,15 +568,14 @@ MonoBehaviour:
   - Of course!
   - Nope
   Responses:
-  - {fileID: 8300000, guid: de3b15547fd3d054d8df45e45ad56f6f, type: 3}
-  - {fileID: 8300000, guid: 1ec70b27fbeb95742a10961dc8a42343, type: 3}
+  - {fileID: 8300000, guid: 461b545b8f55e044b80d58f117bc08b4, type: 3}
+  - {fileID: 8300000, guid: a9af8cac2ada9564c9346d3513c58b5c, type: 3}
   Calls:
   - {fileID: 11400000, guid: cfcf091fb500030408f4afcf27b0e94d, type: 2}
   - {fileID: 11400000, guid: cfcf091fb500030408f4afcf27b0e94d, type: 2}
   Rewards: 6400000000000000
   OnCancelOption: 1
   SelectedOption: 0
-  coinAmount: 10
   optionsText:
   - {fileID: 7383737201725660917}
   - {fileID: 7693605284446267084}

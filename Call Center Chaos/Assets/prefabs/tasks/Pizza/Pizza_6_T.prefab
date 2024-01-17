@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 2415808527263428704}
   - component: {fileID: 386682123674330979}
   m_Layer: 5
-  m_Name: Pizza_4_T
+  m_Name: Pizza_6_T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -560,20 +560,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d349061dc32dd46b3831c0bf34de7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskName: 'Pizza: Refrigerator'
-  taskDescription: Is your refrigerator running?
+  taskName: 'Pizza: Cheese'
+  taskDescription: Heeeyyyy wassup can I get uhhhhhhhhhhh a cheeseburger?
   taskId: 2
   Options:
-  - Haha, very funny
-  - Yes?
+  - Hell yeah
+  - Nah
   Responses:
-  - {fileID: 8300000, guid: 756fccf9d562d93468bec7f854d80837, type: 3}
-  - {fileID: 8300000, guid: 22d2bf6bb4247ea439f6dd88ba7943e5, type: 3}
+  - {fileID: 8300000, guid: 173244d4de48ac440bb8d675d91f7691, type: 3}
+  - {fileID: 8300000, guid: ab47aad8f6232e647b053d902e13b103, type: 3}
   Calls:
-  - {fileID: 11400000, guid: ebcb36e011ce65049bf986f987c3c75e, type: 2}
-  - {fileID: 11400000, guid: 4e7cbfdefb7f90e459501b21c325fbfb, type: 2}
-  Rewards: 0000000064000000
-  OnCancelOption: 0
+  - {fileID: 0}
+  - {fileID: 0}
+  Rewards: 6400000000000000
+  OnCancelOption: 1
   SelectedOption: 0
   optionsText:
   - {fileID: 7383737201725660917}

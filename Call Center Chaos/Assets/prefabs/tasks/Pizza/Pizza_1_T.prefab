@@ -576,7 +576,6 @@ MonoBehaviour:
   Rewards: 0000000064000000
   OnCancelOption: 1
   SelectedOption: 0
-  coinAmount: 10
   optionsText:
   - {fileID: 7383737201725660917}
   - {fileID: 7693605284446267084}
