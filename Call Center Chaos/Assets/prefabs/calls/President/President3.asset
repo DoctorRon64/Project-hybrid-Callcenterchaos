@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Audio: {fileID: 8300000, guid: a68fa2827515ee24c8836e46f26e2f66, type: 3}
   task: {fileID: 0}
+  ringTime: 10
   PickedUp: 0
   manager: {fileID: 0}
