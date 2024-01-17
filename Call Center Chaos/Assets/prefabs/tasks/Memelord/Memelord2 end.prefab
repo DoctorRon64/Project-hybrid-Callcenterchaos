@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Options1: dit en dat zen zus enzo ofzo ik weet het eigenlijk niet'
+  m_Text: 
 --- !u!1 &705708487943797000
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +391,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Options1: dit en dat zen zus enzo ofzo ik weet het eigenlijk niet'
+  m_Text: 
 --- !u!1 &2927653841546510840
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,9 +478,9 @@ GameObject:
   - component: {fileID: 9109713217390787341}
   - component: {fileID: 5272616516367045183}
   - component: {fileID: 2415808527263428704}
-  - component: {fileID: -3689576423746605812}
+  - component: {fileID: 386682123674330979}
   m_Layer: 5
-  m_Name: Orphan7
+  m_Name: Memelord2 end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,7 +548,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-3689576423746605812
+--- !u!114 &386682123674330979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -557,37 +557,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 3855813271506709169}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf28460455b19b74aa039a25a60186f8, type: 3}
+  m_Script: {fileID: 11500000, guid: d1d349061dc32dd46b3831c0bf34de7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskName: ExampleRemover
-  taskDescription: This type of task can remove a TaskId from being permitted.
-  taskId: 2
-  deselectColor: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
-  selectColor: {r: 1, g: 1, b: 1, a: 1}
+  taskName: What ended 1945?
+  taskDescription: Hey. What ended in 1945?
+  taskId: 3
   Options:
-  - 
-  - 
-  Responses: []
-  Calls: []
-  Rewards: 
+  - 1944
+  - The Spanish Inquisition
+  - WWII
+  Responses:
+  - {fileID: 8300000, guid: 629854c79716d5e448fcb4001c1cfbac, type: 3}
+  - {fileID: 8300000, guid: 629854c79716d5e448fcb4001c1cfbac, type: 3}
+  - {fileID: 8300000, guid: 629854c79716d5e448fcb4001c1cfbac, type: 3}
+  Calls:
+  - {fileID: 11400000, guid: b0b5a5cbc046ef948a24bbea45d1f668, type: 2}
+  - {fileID: 11400000, guid: b0b5a5cbc046ef948a24bbea45d1f668, type: 2}
+  - {fileID: 11400000, guid: b0b5a5cbc046ef948a24bbea45d1f668, type: 2}
+  Rewards: 640000000000000000000000
+  OnCancelOption: 0
+  SelectedOption: 0
   optionsText:
   - {fileID: 7383737201725660917}
   - {fileID: 7693605284446267084}
   - {fileID: 6996456821230712502}
-  OnCancelOption: 0
-  SelectedOption: 0
-  timeDuration: 0
-  coinAmount: 0
-  endTaskTree: 0
-  finishSceneName: 
+  deselectColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
+  selectColor: {r: 1, g: 1, b: 1, a: 1}
   taskNameText: {fileID: 5561373088604711145}
   taskDescriptionText: {fileID: 7034984872008688589}
   timeText: {fileID: 4875226331243920177}
   timeDisplay: {fileID: 5802664312149317439}
-  RemoveOption0: 
-  RemoveOption1: 
-  RemoveOption2: 
 --- !u!1 &5299495493079733758
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,14 +719,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 40
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 364.4, y: 187.2}
+  m_CellSize: {x: 360, y: 110}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -808,7 +808,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Options1: dit en dat zen zus enzo ofzo ik weet het eigenlijk niet'
+  m_Text: 
 --- !u!1 &7481408852960103367
 GameObject:
   m_ObjectHideFlags: 0

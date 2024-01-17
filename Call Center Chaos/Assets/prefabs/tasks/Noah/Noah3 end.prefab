@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 2415808527263428704}
   - component: {fileID: 386682123674330979}
   m_Layer: 5
-  m_Name: Orphan6
+  m_Name: Noah3 end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -560,20 +560,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d349061dc32dd46b3831c0bf34de7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskName: Question Plato wrote about?
-  taskDescription: Phone helper buddy! Do you know the name of that guy Plato wrote
-    about? He was Plato's teacher I think.
+  taskName: Yuki found out I had her toy.
+  taskDescription: Hey phone friend... Yuki found out I had her toy. She got really
+    angry at me. I messed up my apology too. I don't think she wants to be my friend
+    anymore. Oh, I have to go now. Bye...
   taskId: 3
-  Options:
-  - That would be Socrates.
-  - That's Diogenes, I believe.
-  Responses:
-  - {fileID: 8300000, guid: 9cdcb4071c3b58f42b43f0ee23bdd7ed, type: 3}
-  - {fileID: 8300000, guid: a31116aca4db4b245893e57b9d0b4040, type: 3}
+  Options: []
+  Responses: []
   Calls:
-  - {fileID: 11400000, guid: 7ea195ab9deeddc43b2cc1a27a7c8fb8, type: 2}
-  - {fileID: 11400000, guid: 7ea195ab9deeddc43b2cc1a27a7c8fb8, type: 2}
-  Rewards: 6400000000000000
+  - {fileID: 11400000, guid: cd2928736ac371e4299000aa0e045045, type: 2}
+  Rewards: 00000000
   OnCancelOption: 0
   SelectedOption: 0
   optionsText:

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 252cef67d129d7a4e9accf095f73a26e, type: 3}
   m_Name: AI0
   m_EditorClassIdentifier: 
-  Audio: {fileID: 0}
+  Audio: {fileID: 8300000, guid: 8433b097efa64e1409e50dddd7adec2e, type: 3}
   task: {fileID: 0}
+  ringTime: 0
   PickedUp: 0
   manager: {fileID: 0}
-  nextCall: {fileID: 0}
+  nextCall: {fileID: 11400000, guid: 231de6c363416d44c974f95b5a4ceb66, type: 2}
