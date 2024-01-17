@@ -560,8 +560,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d349061dc32dd46b3831c0bf34de7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskName: AI "Generation"
-  taskDescription: 
+  taskName: 'AI: Trash'
+  taskDescription: Stupid-ass AI. Your images are usually trash. I want an image
+    of a robot throwing another robot into the trash. Because that's what you are.
+    Trash.
   taskId: 0
   Options:
   - Hand the image to the mailman
