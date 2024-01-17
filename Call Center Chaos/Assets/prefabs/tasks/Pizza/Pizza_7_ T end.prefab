@@ -1,0 +1,177 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4988772375084224993
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: taskId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: taskName
+      value: Pizza place burned down
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: selectColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: selectColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: selectColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: selectColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: deselectColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: deselectColor.b
+      value: 0.93333334
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: deselectColor.g
+      value: 0.93333334
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: deselectColor.r
+      value: 0.93333334
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: taskDescription
+      value: Hey uh this is the boss. The pizza place burned down... Our fridge was
+        apparently a faulty model. It pains me to say but you're out of the job.
+        I guess this is goodbye...
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: Options.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: Rewards.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: Responses.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: Options.Array.data[0]
+      value: Nah
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: Options.Array.data[1]
+      value: Nah
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: Rewards.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: Responses.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 173244d4de48ac440bb8d675d91f7691, type: 3}
+    - target: {fileID: -2646123804644072606, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: Responses.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: ab47aad8f6232e647b053d902e13b103, type: 3}
+    - target: {fileID: 3855813271506709169, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_Name
+      value: Pizza_7_ T
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 515.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1005.463
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 32.664
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 23.8709
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109713217390787341, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9a7c45f026eccd04490e9f7b12688037, type: 3}

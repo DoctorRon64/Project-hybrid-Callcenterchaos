@@ -10,87 +10,68 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskId
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskName
-      value: 'Pizza: Cheese'
+      value: DO YOU HAVE ANY IDEA
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: OnCancelOption
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: taskDescription
-      value: Heeeyyyy wassup can I get uhhhhhhhhhhh a cheeseburger?
+      value: DO YOU HAVE ANY IDEA OF WHAT YOU JUST DID? YOU MADE NATE CRY. WHAT MADE
+        YOU THINK YOU CAN PULL A "YOUR MOM" ON AN ORPHAN. YOU'RE FIRED. GOODBYE!
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Rewards.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: cae6fe851be979346a373e5126809c1b, type: 2}
+      objectReference: {fileID: 11400000, guid: b0b5a5cbc046ef948a24bbea45d1f668, type: 2}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Calls.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: cae6fe851be979346a373e5126809c1b, type: 2}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Calls.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: fa83123335bbecb45a00c0f78687ec93, type: 2}
+      objectReference: {fileID: 11400000, guid: 442a66b936c7b134095299f3d1e5d211, type: 2}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Options.Array.data[0]
-      value: Hell yeah
-      objectReference: {fileID: 0}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Options.Array.data[1]
-      value: Nah
-      objectReference: {fileID: 0}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Options.Array.data[2]
-      value: "Yes 7 cheese, 5 salami, 6 pineapple and 1\_d\xF6ner coming right up."
-      objectReference: {fileID: 0}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Rewards.Array.data[0]
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Rewards.Array.data[1]
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Rewards.Array.data[2]
+      propertyPath: Options.Array.data[0]
+      value: Ok
+      objectReference: {fileID: 0}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: Options.Array.data[1]
+      value: Sorry I might have gotten something wrong.
+      objectReference: {fileID: 0}
+    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: Rewards.Array.data[0]
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 173244d4de48ac440bb8d675d91f7691, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Responses.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: ab47aad8f6232e647b053d902e13b103, type: 3}
-    - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
-      propertyPath: Responses.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 063316924ead4d24fbe2fc839c668723, type: 3}
+      objectReference: {fileID: 8300000, guid: c370d1364bd8f6b48b689b7b10b84160, type: 3}
     - target: {fileID: 3855813271506709169, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Name
-      value: Pizza_6_ T
+      value: Memelord7 end
       objectReference: {fileID: 0}
     - target: {fileID: 9109713217390787341, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Pivot.x

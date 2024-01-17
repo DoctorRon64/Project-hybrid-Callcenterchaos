@@ -3,18 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class EndingTask : Task
 {
-    public override void HandleTaskSubmission()
-    {
-        int selectedAnswer = SelectedOption;
-
-        if (selectedAnswer >= 0 && selectedAnswer < Options.Count)
-        {
-            //do nothing
-        }
-        else
-        {
-            Debug.LogWarning("Invalid answer option: " + selectedAnswer);
-        }
-        manager.RemoveTask(this);
-    }
+	protected override void SubmitAnswerToPhoneCall(int answer)
+	{
+		if (answer < Calls.Count)
+		{
+			MoneyManager.instance.AddAmount(Rewards[answer]);
+			PhoneCallManager.instance.Player.clip = Responses[answer];
+			PhoneCallManager.instance.Player.Play();
+		}
+		else
+		{
+			Debug.LogWarning("Invalid answer option: " + answer);
+		}
+	}
 }
