@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Memelord4
   m_EditorClassIdentifier: 
   Audio: {fileID: 8300000, guid: 7a4019cffe5f82545b9100a7fa922370, type: 3}
-  task: {fileID: 0}
+  task: {fileID: 3855813271506709169, guid: 2326acde5bbab55469b32e25183c253d, type: 3}
+  ringTime: 0
   PickedUp: 0
   manager: {fileID: 0}
