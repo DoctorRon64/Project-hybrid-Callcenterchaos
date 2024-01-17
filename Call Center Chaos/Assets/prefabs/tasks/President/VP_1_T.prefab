@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 2415808527263428704}
   - component: {fileID: 386682123674330979}
   m_Layer: 5
-  m_Name: President_1_T
+  m_Name: VP_1_T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

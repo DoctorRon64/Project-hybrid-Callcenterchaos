@@ -2434,7 +2434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0511c4ff0e817749b43eda31a9bfa87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!1 &685963271
 GameObject:
   m_ObjectHideFlags: 0
@@ -4826,6 +4825,9 @@ MonoBehaviour:
   callDelay: 4
   initialPhoneCalls:
   - {fileID: 11400000, guid: c001579ec614e2f49a437051516609a6, type: 2}
+  - {fileID: 11400000, guid: 0e10599d3356f0741995a9d982fb62f3, type: 2}
+  - {fileID: 11400000, guid: 246f2fd9126d80d478c5fdb90f3b4a07, type: 2}
+  - {fileID: 11400000, guid: e3312f6c9dc4d414b9fcbf19c0152f8c, type: 2}
   currentCall: {fileID: 0}
 --- !u!4 &1313231582
 Transform:
