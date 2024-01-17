@@ -576,7 +576,6 @@ MonoBehaviour:
   Rewards: 6400000000000000
   OnCancelOption: 1
   SelectedOption: 0
-  coinAmount: 10
   optionsText:
   - {fileID: 7383737201725660917}
   - {fileID: 7693605284446267084}
@@ -702,7 +701,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -190, y: 0}
+  m_AnchoredPosition: {x: -190, y: -220}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &840744826316015803

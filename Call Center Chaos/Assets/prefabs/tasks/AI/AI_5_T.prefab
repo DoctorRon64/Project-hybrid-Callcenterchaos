@@ -575,7 +575,6 @@ MonoBehaviour:
   Rewards: 6400000000000000
   OnCancelOption: 1
   SelectedOption: 0
-  coinAmount: 0
   optionsText:
   - {fileID: 7383737201725660917}
   - {fileID: 7693605284446267084}
@@ -586,7 +585,6 @@ MonoBehaviour:
   taskDescriptionText: {fileID: 7034984872008688589}
   timeText: {fileID: 4875226331243920177}
   timeDisplay: {fileID: 5802664312149317439}
-  finishSceneName: 
 --- !u!1 &5299495493079733758
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -190, y: 0}
+  m_AnchoredPosition: {x: -190, y: -220}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &840744826316015803

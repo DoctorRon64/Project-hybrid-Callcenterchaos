@@ -575,17 +575,16 @@ MonoBehaviour:
   Rewards: 6400000000000000
   OnCancelOption: 1
   SelectedOption: 0
-  coinAmount: 10
   optionsText:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   deselectColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
   selectColor: {r: 1, g: 1, b: 1, a: 1}
-  taskNameText: {fileID: 0}
-  taskDescriptionText: {fileID: 0}
-  timeText: {fileID: 0}
-  timeDisplay: {fileID: 0}
+  taskNameText: {fileID: 5561373088604711145}
+  taskDescriptionText: {fileID: 7034984872008688589}
+  timeText: {fileID: 4875226331243920177}
+  timeDisplay: {fileID: 5802664312149317439}
 --- !u!1 &5299495493079733758
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,7 +700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -190, y: 0}
+  m_AnchoredPosition: {x: -190, y: -220}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &840744826316015803
