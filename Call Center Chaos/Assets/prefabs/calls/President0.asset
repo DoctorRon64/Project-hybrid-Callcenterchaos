@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: President0
   m_EditorClassIdentifier: 
   Audio: {fileID: 8300000, guid: bbf1fa48495132d4cb18878577cb44f6, type: 3}
-  task: {fileID: 0}
+  task: {fileID: 3855813271506709169, guid: 735cc81bf8dda594fa330beaf9ce13ce, type: 3}
   ringTime: 15
   PickedUp: 0
   manager: {fileID: 0}
