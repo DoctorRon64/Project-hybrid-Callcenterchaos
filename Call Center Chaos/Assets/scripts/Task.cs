@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum TaskId
@@ -18,7 +17,6 @@ public class Task : MonoBehaviour
     [SerializeField] protected string taskDescription;
     [SerializeField] public TaskId taskId;
 
-
     [Header("Options")]
     [SerializeField] protected List<string> Options = new List<string>();
     [SerializeField] protected List<AudioClip> Responses = new List<AudioClip>();
@@ -27,10 +25,7 @@ public class Task : MonoBehaviour
     [SerializeField] public int OnCancelOption;
     protected int OptionCount => Options.Count;
     public int SelectedOption = 0;
-    [SerializeField] protected float timeDuration;
-    [SerializeField] protected int coinAmount;
-    [SerializeField] protected bool endTaskTree = false;
-    [SerializeField] protected string finishSceneName = "";
+    [SerializeField] protected float timeDuration = 0;
     protected float currentTime;
 
     [Header("References please dont edit")]
@@ -83,11 +78,11 @@ public class Task : MonoBehaviour
         }
     }
 
-	private void HandleTaskSubmission()
+	public virtual void HandleTaskSubmission()
 	{
 		int selectedAnswer = SelectedOption;
 
-		if (selectedAnswer >= 0 && selectedAnswer < Options.Count && !endTaskTree)
+		if (selectedAnswer >= 0 && selectedAnswer < Options.Count)
 		{
 			SubmitAnswerToPhoneCall(selectedAnswer);
 		}
@@ -95,11 +90,6 @@ public class Task : MonoBehaviour
 		{
 			Debug.LogWarning("Invalid answer option: " + selectedAnswer);
 		}
-
-        if (endTaskTree)
-        {
-            SceneManager.LoadScene(finishSceneName);
-        }
 
 		manager.RemoveTask(this);
 	}
