@@ -34,7 +34,6 @@ public class Task : MonoBehaviour
             return TaskTimeHolder.instance.GetTaskDuration(taskId);
         }
     }
-    [SerializeField] protected int coinAmount;
     protected float currentTime;
 
     [Header("References please dont edit")]
