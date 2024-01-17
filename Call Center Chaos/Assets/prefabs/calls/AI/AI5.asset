@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AI5
   m_EditorClassIdentifier: 
   Audio: {fileID: 8300000, guid: b5272e0a49c42624ab91e6cc7d303aa9, type: 3}
-  task: {fileID: 0}
+  task: {fileID: 3855813271506709169, guid: 6dbcf4bc3961315438e91ebb1177f34e, type: 3}
+  ringTime: 10
   PickedUp: 0
   manager: {fileID: 0}

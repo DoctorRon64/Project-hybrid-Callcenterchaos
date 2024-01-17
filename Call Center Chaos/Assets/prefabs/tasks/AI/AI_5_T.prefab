@@ -560,8 +560,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e96ddfbcc26c244fb86b6d59ef9bd65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskName: AI "Generation"
-  taskDescription: 
+  taskName: 'AI: Trump'
+  taskDescription: Is it true that you digital creations were summoned by Satan to
+    take our homes and fight our rightful president Donald J. Trump?! I bet you cant
+    generate a nice picture of Donald J. Trump!
   taskId: 0
   Options:
   - Hand the image to the mailman

@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 2415808527263428704}
   - component: {fileID: 386682123674330979}
   m_Layer: 5
-  m_Name: AI_3_T
+  m_Name: Pizza_4_T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -560,33 +560,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d349061dc32dd46b3831c0bf34de7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskName: 'AI: Circle'
-  taskDescription: Generate a  hundred circles. Exactly a hundred. Best quality.
-    Masterful quality.
-  taskId: 0
+  taskName: 'Pizza: Refrigerator'
+  taskDescription: Is your refrigerator running?
+  taskId: 2
   Options:
-  - Hand the image to the mailman
-  - Fail
+  - Haha, very funny
+  - Yes?
   Responses:
-  - {fileID: 8300000, guid: a6443ec4356182a4da36a8824c54602e, type: 3}
-  - {fileID: 8300000, guid: 8363946c5582bf9458d3564b36c227a8, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 1ec70b27fbeb95742a10961dc8a42343, type: 3}
   Calls:
-  - {fileID: 11400000, guid: 571a242deca1fbf41ac8bcf99a2b15a8, type: 2}
-  - {fileID: 11400000, guid: 571a242deca1fbf41ac8bcf99a2b15a8, type: 2}
-  Rewards: 6400000000000000
-  OnCancelOption: 1
+  - {fileID: 11400000, guid: 05ab5a71b43280443a2d7843513e0032, type: 2}
+  - {fileID: 11400000, guid: 05ab5a71b43280443a2d7843513e0032, type: 2}
+  Rewards: 0000000064000000
+  OnCancelOption: 0
   SelectedOption: 0
   coinAmount: 10
   optionsText:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7383737201725660917}
+  - {fileID: 7693605284446267084}
+  - {fileID: 6996456821230712502}
   deselectColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
   selectColor: {r: 1, g: 1, b: 1, a: 1}
-  taskNameText: {fileID: 0}
-  taskDescriptionText: {fileID: 0}
-  timeText: {fileID: 0}
-  timeDisplay: {fileID: 0}
+  taskNameText: {fileID: 5561373088604711145}
+  taskDescriptionText: {fileID: 7034984872008688589}
+  timeText: {fileID: 4875226331243920177}
+  timeDisplay: {fileID: 5802664312149317439}
 --- !u!1 &5299495493079733758
 GameObject:
   m_ObjectHideFlags: 0
