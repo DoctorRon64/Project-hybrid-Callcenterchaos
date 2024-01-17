@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 2415808527263428704}
   - component: {fileID: 386682123674330979}
   m_Layer: 5
-  m_Name: Orphan0
+  m_Name: Orphan2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -560,18 +560,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d349061dc32dd46b3831c0bf34de7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskName: Tutorial Orphan
-  taskDescription: Hey there! I am to understand that you will be our remote homework
-    help? The children of the orphanage have really been struggling at school. I'll
-    have the kids call you if they have any questions. You'll be rewarded handsomely
-    if you give them good answers. Best of luck to you!
+  taskName: Question founder flower Town?
+  taskDescription: Hey answer friend! I can't find who the founder of Flounder Town
+    is? It's in Italy. (multiple towns but 1 in Italy)
   taskId: 3
   Options:
-  - Cool Ok
-  Responses: []
+  - Karl Marx
+  - Fisherman Fred
+  Responses:
+  - {fileID: 8300000, guid: 0470836adbfddb64297ca0608e196ab5, type: 3}
+  - {fileID: 8300000, guid: b5152059a18d75e45b34cfc4d5f64ff0, type: 3}
   Calls:
-  - {fileID: 11400000, guid: a1939c66931b90f438a8ab5401e096c4, type: 2}
-  Rewards: 00000000
+  - {fileID: 11400000, guid: 5889d81040a66c241af949b3e1ae8b65, type: 2}
+  - {fileID: 11400000, guid: 5889d81040a66c241af949b3e1ae8b65, type: 2}
+  Rewards: 6400000000000000
   OnCancelOption: 0
   SelectedOption: 0
   optionsText:
