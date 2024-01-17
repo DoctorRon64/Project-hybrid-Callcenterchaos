@@ -1,103 +1,144 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public enum TaskId
 {
-	Grandma,
-	President,
-	Italy,
-	Homework
+    AI,
+    President,
+    Italy,
+    Homework
 }
 
 public class Task : MonoBehaviour
 {
-	[Header("Values")]
-	[SerializeField] private string taskName;
-	[SerializeField] private string taskDescription;
-	[SerializeField] private TaskId taskId;
-	[SerializeField] private int coinAmount;
+    [Header("Values")]
+    [SerializeField] protected string taskName;
+    [SerializeField] protected string taskDescription;
+    [SerializeField] public TaskId taskId;
 
-	[Header("Time")]
-	[SerializeField] private float timeDuration;
-	private float currentTime;
+    [Header("Options")]
+    [SerializeField] protected List<string> Options = new List<string>();
+    [SerializeField] protected List<AudioClip> Responses = new List<AudioClip>();
+    [SerializeField] public List<PhoneCall> Calls = new List<PhoneCall>();
+    [SerializeField] protected List<int> Rewards = new List<int>();
+    [SerializeField] public int OnCancelOption;
+    protected int OptionCount => Options.Count;
+    public int SelectedOption = 0;
+    [SerializeField]
+    protected float timeDuration
+    {
+        get
+        {
+            return TaskTimeHolder.instance.GetTaskDuration(taskId);
+        }
+    }
+    protected float currentTime;
 
-	[Header("Answer")]
-	[SerializeField] private bool taskAnswer = false;
-
-    [Header("TextReference")]
+    [Header("References please dont edit")]
+    [SerializeField] protected Text[] optionsText;
+    [SerializeField] protected Color deselectColor;
+    [SerializeField] protected Color selectColor;
+    [SerializeField] protected Text taskNameText;
+    [SerializeField] protected Text taskDescriptionText;
+    [SerializeField] protected Text timeText;
+    [SerializeField] protected Image timeDisplay;
+    protected TaskManager manager;
     [System.NonSerialized] public GameObject associatedGameObject;
-    [SerializeField] private Text taskNameText;
-	[SerializeField] private Text taskDescriptionText;
-	[SerializeField] private Text timeText;
-	[SerializeField] private Image timeDisplay;
+
+    public void SetupTaskManager(TaskManager _manager)
+    {
+        manager = _manager;
+    }
 
     private void UpdateUI()
-	{
-		taskNameText.text = taskName;
-		taskDescriptionText.text = taskDescription;
-		timeText.text = "Time left: " + currentTime.ToString("F1") + " seconds";
-		timeDisplay.fillAmount = currentTime / timeDuration;
-	}
-
-	public string TaskName
-	{
-		get => taskName;
-		set
-		{
-			taskName = value;
-			UpdateUI();
-		}
-	}
-	public string Description
-	{
-		get => taskDescription;
-		set
-		{
-			taskDescription = value;
-			UpdateUI();
-		}
-	}
-	public float CurrentTime
-	{
-		get => currentTime;
-		set
-		{
-			currentTime = Mathf.Clamp(value, 0f, timeDuration);
-			UpdateUI();
-		}
-	}
-	public TaskId ID 
-	{ 
-		get { return taskId; } 
-		set { taskId = value; } 
-	}
-	public int CoinAmount { 
-		get { return coinAmount; } set { coinAmount = value; } 
-	}
-	public float TimeDuration 
-	{ 
-		get { return timeDuration; } set { timeDuration = value; } 
-	}
-
-	public void StartTask()
-	{
-		currentTime = timeDuration;
-		UpdateUI();
-	}
-
-    public void SubmitAnswer(bool answer)
     {
-        taskAnswer = answer;
-        // Handle the answer as needed in your game logic
+        taskNameText.text = taskName;
+        taskDescriptionText.text = taskDescription;
+        timeText.text = "Time left: " + currentTime.ToString("F1") + " seconds";
+        timeDisplay.fillAmount = currentTime / timeDuration;
+
+        for (int i = 0; i < Options.Count; i++)
+        {
+            optionsText[i].text = Options[i];
+        }
+    }
+
+    public void StartTask()
+    {
+        currentTime = timeDuration;
+        UpdateUI();
+    }
+
+    public bool SubmitAnswer(int answer)
+    {
+        if (answer < OptionCount)
+        {
+            SelectedOption = answer;
+            HandleTaskSubmission();
+            return true;
+        }
+        else
+        {
+            Debug.LogWarning("Invalid answer option: " + answer);
+            return false;
+        }
+    }
+
+    public virtual void HandleTaskSubmission()
+    {
+        int selectedAnswer = SelectedOption;
+
+        if (selectedAnswer >= 0 && selectedAnswer < Options.Count)
+        {
+            SubmitAnswerToPhoneCall(selectedAnswer);
+        }
+        else
+        {
+            Debug.LogWarning("Invalid answer option: " + selectedAnswer);
+        }
+
+        manager.RemoveTask(this);
+    }
+
+    protected virtual void SubmitAnswerToPhoneCall(int answer)
+    {
+        if (answer < Calls.Count)
+        {
+            PhoneCall selectedCall = Calls[answer];
+            MoneyManager.instance.AddAmount(Rewards[answer]);
+            PhoneCallManager.instance.Player.clip = Responses[answer];
+            PhoneCallManager.instance.Player.Play();
+            if (selectedCall != null)
+            {
+                PhoneCallManager.instance.AddCallToQueue(selectedCall);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Invalid answer option: " + answer);
+        }
     }
 
     public void UpdateTaskTime(float deltaTime)
-	{
-		currentTime = Mathf.Clamp(currentTime - deltaTime, 0f, timeDuration);
-		UpdateUI();
-	}
+    {
+        currentTime = Mathf.Clamp(currentTime - deltaTime, 0f, timeDuration);
+        UpdateUI();
+    }
 
-	public bool IsTaskCompleted()
-	{
-		return currentTime <= 0f;
-	}
+    public bool IsTaskCompleted()
+    {
+        return currentTime <= 0f;
+    }
+
+    public void DeSelect()
+    {
+        GetComponent<Image>().color = deselectColor;
+    }
+
+    public void Select()
+    {
+        GetComponent<Image>().color = selectColor;
+    }
 }

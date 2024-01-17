@@ -1,12 +1,15 @@
+using System;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SerialConnect : MonoBehaviour
 {
-    public byte DebugCommand;
+    public string DebugPort;
+    public bool UseDebugPort;
     public int LedCount;
     public Dropdown PortSelector;
     private List<string> ports;
@@ -14,33 +17,55 @@ public class SerialConnect : MonoBehaviour
     public static SerialConnect instance;
     public delegate void ButtonEventDelegate(int index, bool state);
     public ButtonEventDelegate ButtonEvent;
+    private UnityEvent dropdownEvent;
 
     private void Start()
     {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
         instance = this;
-        RefreshPortsDropdown();
+        DontDestroyOnLoad(gameObject);
+        if (PortSelector != null)
+        {
+            RefreshPortsDropdown();
+            PortSelector.onValueChanged.AddListener(delegate { ConnectToPort(); });
+        }
+        ConnectToPort();
     }
 
-    public void SwitchLed(int index, bool state)
-    {
-        if (activePort == null || index < LedCount) { return; }
-
-        byte stateInt = 0;
-        if (state) { stateInt = 1; }
-
-        int command = index & ~(1 << 7) | (stateInt << (byte)7);
-
-        SendByte((byte)command);
-
-    }
-
-    public void SendByte(byte data)
+    private void Update()
     {
         if (activePort == null) { return; }
 
-        byte[] buffer = new byte[1];
+        if (activePort.BytesToRead > 0) 
+        {
+            byte[] data = new byte[1];
+            activePort.Read(data, 0, 1);
+            HandleData(data[0]);
+        }
+    }
+
+    public void SwitchLed(bool state)
+    {
+        if (activePort == null) { return; }
+
+        char command = '0';
+        if (state) { command = '1'; }
+
+        SendByte(command);
+
+    }
+
+    public void SendByte(char data)
+    {
+        if (activePort == null) { return; }
+
+        char[] buffer = new char[1];
         buffer[0] = data;
-        activePort.Write(buffer, 0, 1);
+        activePort.Write(buffer, 0, buffer.Length);
+        Debug.Log($"Byte sent to Arduino: {buffer[0]}");
     }
 
     public void RefreshPortsDropdown()
@@ -55,12 +80,28 @@ public class SerialConnect : MonoBehaviour
 
     public void ConnectToPort()
     {
-        string portName = ports[PortSelector.value];
+        string portName;
+        if (UseDebugPort)
+        {
+            portName = DebugPort;
+        }
+        else
+        {
+            portName = ports[PortSelector.value];
+        }
         activePort = new SerialPort(portName, 9600);
 
-        activePort.Open();
-        activePort.DataReceived += ReceiveData;
-        Debug.Log($"Connected to {portName}");
+        try
+        {
+            activePort.Open();
+            activePort.DataReceived += ReceiveData;
+            Debug.Log($"Connected to {portName}");
+        }
+        catch(Exception e)
+        {
+            Debug.LogException(e);
+            Debug.Log($"Couldn't connect to {portName}");
+        }
 
     }
 
@@ -68,7 +109,7 @@ public class SerialConnect : MonoBehaviour
     {
         if (activePort != null)
         {
-            if (activePort.IsOpen) { activePort.Close(); }
+            if (activePort.IsOpen) { SwitchLed(false); activePort.Close(); }
 
             activePort.Dispose();
             activePort = null;
@@ -91,12 +132,6 @@ public class SerialConnect : MonoBehaviour
         if (stateInt == 1) { state = true; }
         ButtonEvent?.Invoke(index, state);
         Debug.Log($"Button {index} state change: {state}");
-    }
-
-    [ContextMenu("Test value")]
-    public void DebugTest()
-    {
-        HandleData(DebugCommand);
     }
 
     private void OnDestroy()

@@ -7,12 +7,12 @@ public class MouseUI : MonoBehaviour
     [SerializeField] public RectTransform UIObject;
 
     Vector3 targetPosition;
-    AudioSource audio;
+    private AudioSource audioSource = new AudioSource();
 
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();;
+        audioSource = GetComponent<AudioSource>();;
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class MouseUI : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            audio.Play();
+            audioSource.Play();
         }
     }
 
