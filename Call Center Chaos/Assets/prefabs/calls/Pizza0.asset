@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pizza0
   m_EditorClassIdentifier: 
   Audio: {fileID: 8300000, guid: d11aeec422885114db9d251b4935eec0, type: 3}
-  task: {fileID: 0}
+  task: {fileID: 3855813271506709169, guid: bd93711704b1feb429d655bfb3e50fff, type: 3}
   ringTime: 15
   PickedUp: 0
   manager: {fileID: 0}

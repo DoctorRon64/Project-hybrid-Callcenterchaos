@@ -10,9 +10,10 @@ public class TaskTimeHolder : MonoBehaviour
     public float AITime;
     public float italyTime;
     public float homeworkTime;
+
     void Start()
     {
-
+        instance = this;
     }
 
     public float GetTaskDuration(TaskId taskId) {
