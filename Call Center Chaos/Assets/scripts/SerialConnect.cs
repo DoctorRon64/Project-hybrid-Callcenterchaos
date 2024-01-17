@@ -21,10 +21,12 @@ public class SerialConnect : MonoBehaviour
 
     private void Start()
     {
-        if(instance != null)
+        if (instance != null)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            return;
         }
+       
         instance = this;
         DontDestroyOnLoad(gameObject);
         if (PortSelector != null)
