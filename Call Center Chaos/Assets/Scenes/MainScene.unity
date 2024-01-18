@@ -2450,7 +2450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &685963272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4825,9 +4825,10 @@ MonoBehaviour:
   callDelay: 4
   initialPhoneCalls:
   - {fileID: 11400000, guid: 246f2fd9126d80d478c5fdb90f3b4a07, type: 2}
-  - {fileID: 11400000, guid: c001579ec614e2f49a437051516609a6, type: 2}
   - {fileID: 11400000, guid: 0e10599d3356f0741995a9d982fb62f3, type: 2}
-  - {fileID: 11400000, guid: e3312f6c9dc4d414b9fcbf19c0152f8c, type: 2}
+  - {fileID: 11400000, guid: e4006916075131341b0a9116f08d2479, type: 2}
+  - {fileID: 11400000, guid: c001579ec614e2f49a437051516609a6, type: 2}
+  - {fileID: 11400000, guid: 9b0dddbb29d69f44f8b4b3a85f37359f, type: 2}
   currentCall: {fileID: 0}
 --- !u!4 &1313231582
 Transform:
@@ -6633,10 +6634,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e101e8b252f5541a18e680e2859cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  presidentTime: 50
-  AITime: 50
-  italyTime: 30
-  homeworkTime: 40
+  presidentTime: 300
+  AITime: 120
+  italyTime: 120
+  homeworkTime: 120
 --- !u!4 &1848909118
 Transform:
   m_ObjectHideFlags: 0
@@ -6860,7 +6861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1914799799
 RectTransform:
   m_ObjectHideFlags: 0

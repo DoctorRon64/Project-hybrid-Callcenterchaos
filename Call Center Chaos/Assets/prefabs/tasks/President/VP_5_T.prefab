@@ -56,7 +56,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[0]
-      value: Tell Eagle where and how to attack.
+      value: Tell Eagle what to do. You might find details in Geneva Conventions...
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[1]
@@ -90,9 +90,94 @@ PrefabInstance:
       propertyPath: Responses.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 46ed511e0f4b0b1429503ad5f186b240, type: 3}
+    - target: {fileID: 840744826316015803, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_CellSize.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413674277007740904, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413674277007740904, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413674277007740904, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413674277007740904, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413674277007740904, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413674277007740904, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3855813271506709169, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Name
       value: VP_5_T
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183788016064887021, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183788016064887021, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183788016064887021, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183788016064887021, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183788016064887021, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183788016064887021, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197807305433854026, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197807305433854026, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197807305433854026, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197807305433854026, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197807305433854026, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197807305433854026, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383737201725660917, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_Text
+      value: Figure out a solution to the crisis. Look at Diplomacy for details about
+        the Chinese President, and Geneva Conventions for details.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693605284446267084, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9109713217390787341, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: m_Pivot.x

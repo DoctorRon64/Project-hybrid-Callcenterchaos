@@ -59,7 +59,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[0]
-      value: Find any infractions by the enemy force.
+      value: Find any infractions by the enemy force. Use Geneva Conventions!
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[1]

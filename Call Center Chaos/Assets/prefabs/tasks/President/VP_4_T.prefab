@@ -60,7 +60,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[0]
-      value: Find any issues with the current plan.
+      value: Find any issues with the current plan. Use Diplomacy and Geneva Conventions!
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[1]

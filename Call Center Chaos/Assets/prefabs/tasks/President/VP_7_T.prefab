@@ -59,7 +59,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[0]
-      value: Tell Eagle what to do.
+      value: Tell Eagle what to do. Use either Diplomacy to convince the three leaders,
+        or use War Maps to find nuke targets.
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[1]

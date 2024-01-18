@@ -60,7 +60,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[0]
-      value: Figure out a solution to the crisis.
+      value: Figure out a solution to the crisis. Look at Diplomacy for details about
+        the Chinese President, and Geneva Conventions for details.
       objectReference: {fileID: 0}
     - target: {fileID: 386682123674330979, guid: 550a8a616c88cb842844bbd71405de64, type: 3}
       propertyPath: Options.Array.data[1]

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SvenTestScene.unity
     guid: c61dd7bf7d3973b4398cc25114486d0e
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: db5fb32d788442644a5748d372ac029f
   m_configObjects: {}

@@ -4992,7 +4992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c39315c151c4f4eb5fd50f670d1327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DebugPort: 
+  DebugPort: COM3
   UseDebugPort: 0
   LedCount: 1
   PortSelector: {fileID: 1791714474}

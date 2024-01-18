@@ -8,13 +8,17 @@ public class GameMasterControls : MonoBehaviour
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.LeftArrow) && taskManager.taskQueue.Count > 1)
+		if (Input.GetKeyDown(keyCodes[0]) && taskManager.taskQueue.Count > 1)
 		{
 			SelectPreviousTask();
 		}
-		else if (Input.GetKeyDown(KeyCode.RightArrow) && taskManager.taskQueue.Count > 1)
+		else if (Input.GetKeyDown(keyCodes[1]) && taskManager.taskQueue.Count > 1)
 		{
 			SelectNextTask();
+		}
+		else if (Input.GetKeyDown(keyCodes[0]) || Input.GetKeyDown(keyCodes[1]) && taskManager.taskQueue.Count == 1)
+		{
+			SelectOnlyTask();
 		}
 
 		// Select AnswerOption with 1, 2, or 3 keys
@@ -22,6 +26,12 @@ public class GameMasterControls : MonoBehaviour
 		HandleKeyInput(keyCodes[3], 1);
 		HandleKeyInput(keyCodes[4], 2);
 	}
+
+	private void SelectOnlyTask()
+	{
+		selectedTaskIndex = 0;
+        taskManager.TaskSelectUI(selectedTaskIndex);
+    }
 
 	private void HandleKeyInput(KeyCode _keyCode, int _option)
 	{

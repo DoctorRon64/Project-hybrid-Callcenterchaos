@@ -15,6 +15,6 @@ MonoBehaviour:
   Audio: {fileID: 8300000, guid: 7bcabb41f48939e4dba414f8f0587b14, type: 3}
   task: {fileID: 1211833976995388965, guid: b7c1163625efd534b8b0f0cdadc71383, type: 3}
   ringTime: 15
-  PickedUp: 0
+  PickedUp: 1
   manager: {fileID: 0}
-  nextCall: {fileID: 11400000, guid: a1939c66931b90f438a8ab5401e096c4, type: 2}
+  nextCall: {fileID: 11400000, guid: ed8977f63c46f5049a2095eddf025ccc, type: 2}
