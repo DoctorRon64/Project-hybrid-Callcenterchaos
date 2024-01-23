@@ -4828,7 +4828,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e10599d3356f0741995a9d982fb62f3, type: 2}
   - {fileID: 11400000, guid: e4006916075131341b0a9116f08d2479, type: 2}
   - {fileID: 11400000, guid: c001579ec614e2f49a437051516609a6, type: 2}
-  - {fileID: 11400000, guid: 9b0dddbb29d69f44f8b4b3a85f37359f, type: 2}
   currentCall: {fileID: 0}
 --- !u!4 &1313231582
 Transform:
